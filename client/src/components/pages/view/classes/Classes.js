@@ -13,13 +13,18 @@ const Classes = (props) => {
   const { isDialogOpened, handleOpenNewClassDialog } = props;
   const [ classList, setClassList ] = useState([]);
   const [ message, setMessage ] = useState({ isDisplayed: false, content: '' });
-  const [ backdrop, setBackdrop ] = useState(false);
+  const [ backdrop, setBackdrop ] = useState(true);
 
   useEffect(() => {
     classAPI.getClasses().then((resp) => {
       setClassList(resp.data.classes);
+      setBackdrop(false);
     });
-  }, [classList]);
+  }, []);
+
+  const updateClassList = (data) => {
+    setClassList(data);
+  }
 
   const toggleMessage = (value = { isDisplayed: false, content: '' }) => {
     setMessage(value);
@@ -37,6 +42,7 @@ const Classes = (props) => {
           handleOpenNewClassDialog={handleOpenNewClassDialog}
           toggleMessage={toggleMessage}
           toggleBackdrop={toggleBackdrop}
+          updateClassList={updateClassList}
         />
       )}
       <Grid

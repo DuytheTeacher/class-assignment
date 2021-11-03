@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const classesAPIUrl = 'http://localhost:5000/api/user/classes';
+const classesAPIUrl = 'https://evening-taiga-99781.herokuapp.com/api/user/classes';
 const randomImageUrl = 'https://source.unsplash.com/345x140/?learn,education';
 
 export const images = {

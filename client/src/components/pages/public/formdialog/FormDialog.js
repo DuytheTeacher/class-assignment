@@ -11,7 +11,7 @@ import styles from './FormDialog.module.scss';
 
 
 const FormDialog = (props) => {
-  const { isDialogOpened, handleOpenNewClassDialog, toggleMessage, toggleBackdrop } = props;
+  const { isDialogOpened, handleOpenNewClassDialog, toggleMessage, toggleBackdrop, updateClassList } = props;
 
   const handleClose = () => {
     handleOpenNewClassDialog(false);
@@ -51,6 +51,8 @@ const FormDialog = (props) => {
         handleOpenNewClassDialog(false);
         toggleBackdrop(true);
         await classAPI.createClass(values);
+        const responseClasses = await classAPI.getClasses();
+        updateClassList(responseClasses.data.classes);
         toggleBackdrop(false);
         toggleMessage({ isDisplayed: true, content: 'Create new class successfully!' });
       } catch (error) {
