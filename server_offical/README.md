@@ -23,3 +23,4 @@ _ tsc --init
 - tsconfig
 - winston
 - bcryptjs
+- class-validator

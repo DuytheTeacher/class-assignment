@@ -2,6 +2,12 @@ import mongoose from "mongoose";
 import IUser from "./users.interface";
 
 const UserSchema = new mongoose.Schema({
+  account_name: {
+    type: String,
+    required: true,
+    unique: true,
+    index: true,
+  },
   first_name: {
     type: String,
     required: true,
@@ -13,8 +19,6 @@ const UserSchema = new mongoose.Schema({
   email: {
     type: String,
     required: true,
-    unique: true,
-    index: true,
   },
   password: {
     type: String,

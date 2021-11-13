@@ -7,6 +7,8 @@ import gravatar from "gravatar";
 import bcryptjs from "bcryptjs";
 import IUser from "./users.interface";
 import jwt from "jsonwebtoken";
+import UpdateDto from "./dtos/update.dto";
+import { exceptions } from "winston";
 
 class UserService {
   public userSchema = UserSchema;
@@ -16,9 +18,14 @@ class UserService {
       throw new HttpException(400, "Model is empty");
     }
 
-    const user = await this.userSchema.findOne({ email: model.email });
+    const user = await this.userSchema
+      .findOne({ account_name: model.account_name })
+      .exec();
     if (user) {
-      throw new HttpException(409, `Your email ${model.email} already exist`);
+      throw new HttpException(
+        409,
+        `Your account_name ${model.account_name} already exist`
+      );
     }
 
     const avatar = gravatar.url(model.email!, {
@@ -38,6 +45,55 @@ class UserService {
     });
 
     return this.createToken(createUser);
+  }
+
+  public async updateUser(userId: string, model: UpdateDto): Promise<IUser> {
+    if (isEmptyObject(model) === true) {
+      throw new HttpException(400, "Model is empty");
+    }
+
+    const user = await this.userSchema.findById(userId).exec();
+    if (!user) {
+      throw new HttpException(400, `User is not exists`);
+    }
+
+    let updateUserById;
+
+    if (model.password) {
+      const salt = await bcryptjs.genSalt(10);
+      const hashedPassword = await bcryptjs.hash(model.password, salt);
+      updateUserById = await this.userSchema
+        .findByIdAndUpdate(userId, {
+          ...model,
+          password: hashedPassword,
+        })
+        .exec();
+    } else {
+      updateUserById = await this.userSchema
+        .findByIdAndUpdate(userId, {
+          ...model,
+        })
+        .exec();
+    }
+
+    if (!updateUserById) {
+      throw new HttpException(409, "You are not an user");
+    }
+
+    const user_updated = await this.userSchema.findById(userId).exec();
+    if (!user_updated) {
+      throw new HttpException(404, `User is not exists`);
+    }
+
+    return user_updated;
+  }
+
+  public async getUserById(userId: string): Promise<IUser> {
+    const user = await this.userSchema.findById(userId).exec();
+    if (!user) {
+      throw new HttpException(404, `User is not exists`);
+    }
+    return user;
   }
 
   private createToken(user: IUser): TokenData {

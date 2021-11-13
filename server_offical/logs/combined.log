@@ -349,3 +349,904 @@
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property last_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property email has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property password has failed the following constraints: isEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property last_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property email has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property password has failed the following constraints: isEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property last_name has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property email has failed the following constraints: isEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property password has failed the following constraints: isEmpty [39m
+[31m[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your email letye292s222211@gamil.com already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Some thing when wrong[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property first_name has failed the following constraints: isNotEmpty [39m
+[31m,An instance of RegisterDto has failed the validation:[39m
+[31m - property last_name has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your email letye292s222211@gamil.com already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name undefined already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected string in JSON at position 38[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected string in JSON at position 38[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s2222211@gamil.com" }[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s22222121@gamil.com" }[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s22222121@gamil.com" }[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s22222121@gamil.com" }[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s22222121@gamil.com" }[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name letie1ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "letye292s222222121@gamil.com" }[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name letie12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name letie12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name leti2e12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.users index: email_1 dup key: { email: "let1ye2922s222222121@gamil.com" }[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let1i2e12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of RegisterDto has failed the validation:[39m
+[31m - property type has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let1i2e112ndat already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid password[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'id')[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'id')[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'id')[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid password[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid password[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid password[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop thay ba already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop thasy ba already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: An instance of CreateDto has failed the validation:[39m
+[31m - property name has failed the following constraints: isNotEmpty [39m
+[31m[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop thay ba already exist[39m
