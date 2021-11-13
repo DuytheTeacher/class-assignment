@@ -3,7 +3,8 @@
 export default interface Classroom {
     _id: string;
     name: string;
+    auth_id: string;
     description: string;
-    user: Array<string>;
+    participants_id: Array<string>;
     createTime: Date;
 }

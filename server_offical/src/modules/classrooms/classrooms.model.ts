@@ -11,11 +11,15 @@ const ClassroomSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 50,
   },
+  auth_id: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,
   },
-  user: [
+  participants_id: [
     {
       type: String,
       ref: "user",

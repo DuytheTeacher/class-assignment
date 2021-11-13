@@ -35,7 +35,8 @@ class ClassroomService {
 
     const createClassroom: Classroom = await this.classroomSchema.create({
       ...model,
-      user: [userId],
+      auth_id: userId,
+      participants_id: [userId],
       createTime: Date.now(),
     });
 
