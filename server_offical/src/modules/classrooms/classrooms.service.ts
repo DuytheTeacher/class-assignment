@@ -20,7 +20,7 @@ class ClassroomService {
     }
 
     if (user.type === 0) {
-        throw new HttpException(400, `User iss student`);
+        throw new HttpException(400, `User is student`);
     }
 
     const classroom = await this.classroomSchema

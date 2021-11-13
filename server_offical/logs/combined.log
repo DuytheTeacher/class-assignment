@@ -1253,3 +1253,12 @@
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop thay ba already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let1i2e1112ndat already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let1i2e21112ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: User is student[39m

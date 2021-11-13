@@ -31,6 +31,9 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  type: {
+    type: Number,
+  }
 });
 
 const User = mongoose.model<IUser & mongoose.Document>("user", UserSchema)
