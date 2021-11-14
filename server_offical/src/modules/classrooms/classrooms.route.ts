@@ -23,5 +23,33 @@ export default class ClassroomsRoute implements Route {
       this.classroomsController.create
     );
 
+    this.router.get(
+      `${this.path}/get`,
+      authMiddleware,
+      this.classroomsController.getDetail
+    );
+
+    this.router.get(
+      `${this.path}/get_list_user`,
+      authMiddleware,
+      this.classroomsController.listUserInClassroom
+    );
+
+    this.router.post(
+      `${this.path}/create_classroom_invitation_link`,
+      authMiddleware,
+      this.classroomsController.createClassroomInvitationLink
+    );
+
+    this.router.get(
+      `${this.path}/join_in_classroom`,
+      this.classroomsController.joinInClassroom
+    );
+
+    this.router.post(
+      `${this.path}/send_classroom_invitation_link`,
+      authMiddleware,
+      this.classroomsController.sendClassroomInvitationLink
+    );
   }
 }

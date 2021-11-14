@@ -21,7 +21,7 @@ const ClassroomSchema = new mongoose.Schema({
   },
   participants_id: [
     {
-      type: String,
+      type: ObjectId,
       ref: "user",
     },
   ],
