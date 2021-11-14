@@ -22,7 +22,7 @@ class ClassroomService {
       throw new HttpException(404, `User is not exists`);
     }
 
-    if (user.type === 0) {
+    if (user.user_type === 0) {
       throw new HttpException(400, `User is student`);
     }
 
@@ -67,6 +67,18 @@ class ClassroomService {
     }
 
     return listUser;
+  }
+
+  public async listClassroom(): Promise<Array<Classroom>> {
+    const listClassroom = <any>(
+      await this.classroomSchema.find()
+    );
+
+    if (!listClassroom) {
+      throw new HttpException(409, `Classroom is not exist`);
+    }
+
+    return listClassroom;
   }
 
   public async joinInClassroom(

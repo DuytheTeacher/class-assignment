@@ -27,12 +27,24 @@ const UserSchema = new mongoose.Schema({
   avatar: {
     type: String,
   },
-  date: {
-    type: Date,
+  create_at: {
+    type: Number,
     default: Date.now,
   },
-  type: {
+  update_at: {
     type: Number,
+    default: Date.now,
+  },
+  user_type: {
+    type: Number,
+  },
+  reg_type: {
+    type: Number,
+  },
+  mssv: {
+    type: String,
+    unique: true,
+    index: true,
   }
 });
 

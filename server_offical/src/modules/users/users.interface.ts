@@ -4,7 +4,10 @@ export default interface IUser {
     last_name: string;
     email: string;
     password: string;
-    type: number;
+    user_type: number;
+    reg_type: number;
+    mssv: string;
     avatar: string;
-    date: Date
+    create_at: Number;
+    update_at: Number;
 }

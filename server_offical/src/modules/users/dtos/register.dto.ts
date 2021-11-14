@@ -6,14 +6,15 @@ export default class RegisterDto {
     last_name: string,
     email: string,
     password: string,
-    type: number,
+    user_type: number, //0hs, 1gv
   ) {
+
     this.account_name = account_name;
     this.first_name = first_name;
     this.last_name = last_name;
     this.email = email;
     this.password = password;
-    this.type = type;
+    this.user_type = user_type;
   }
 
   @IsNotEmpty()
@@ -29,5 +30,5 @@ export default class RegisterDto {
   @MinLength(6)
   public password: string;
   @IsNotEmpty()
-  public type: number;
+  public user_type: number;
 }

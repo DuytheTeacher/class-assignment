@@ -8,7 +8,6 @@ import bcryptjs from "bcryptjs";
 import IUser from "./users.interface";
 import jwt from "jsonwebtoken";
 import UpdateDto from "./dtos/update.dto";
-import { exceptions } from "winston";
 
 class UserService {
   public userSchema = UserSchema;
@@ -39,9 +38,10 @@ class UserService {
     const hashedPassword = await bcryptjs.hash(model.password!, salt);
     const createUser: IUser = await this.userSchema.create({
       ...model,
+      reg_type: 0,
       password: hashedPassword,
       avatar: avatar,
-      date: Date.now(),
+      create_at: Date.now(),
     });
 
     return this.createToken(createUser);
@@ -65,6 +65,7 @@ class UserService {
       updateUserById = await this.userSchema
         .findByIdAndUpdate(userId, {
           ...model,
+          update_at: Date.now(),
           password: hashedPassword,
         })
         .exec();
@@ -72,6 +73,7 @@ class UserService {
       updateUserById = await this.userSchema
         .findByIdAndUpdate(userId, {
           ...model,
+          update_at: Date.now(),
         })
         .exec();
     }
@@ -94,6 +96,37 @@ class UserService {
       throw new HttpException(404, `User is not exists`);
     }
     return user;
+  }
+
+  public async mappingMSSVWithAccount(
+    mssv: string,
+    userId: string
+  ): Promise<IUser> {
+    const user = await this.userSchema.findById(userId).exec();
+    if (!user) {
+      throw new HttpException(404, `User is not exists`);
+    }
+
+    if (user.user_type === 1) {
+      throw new HttpException(400, `User is teacher`);
+    }
+
+    const updateUserById = await this.userSchema
+      .findByIdAndUpdate(userId, {
+        mssv: mssv,
+      })
+      .exec();
+
+    if (!updateUserById) {
+      throw new HttpException(409, "Error when mapping");
+    }
+
+    const user_updated = await this.userSchema.findById(userId).exec();
+    if (!user_updated) {
+      throw new HttpException(404, `User is not exists`);
+    }
+
+    return user_updated;
   }
 
   private createToken(user: IUser): TokenData {

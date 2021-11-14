@@ -1,7 +1,6 @@
 import { Route } from "@core/interfaces";
 import { authMiddleware, validationMiddleware } from "@core/middleware";
 import { Router } from "express";
-
 import AuthController from "./auth.controller";
 
 export default class AuthRoute implements Route {
@@ -22,5 +21,7 @@ export default class AuthRoute implements Route {
       authMiddleware,
       this.authController.getCurrentLoginUser
     );
+
+    this.router.post(`${this.path}/login_google`, this.authController.loginGoogle);
   }
 }
