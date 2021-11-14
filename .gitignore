@@ -2,4 +2,3 @@ server/node_modules
 server/.env
 
 server_offical/node_modules
-server_offical/.env
