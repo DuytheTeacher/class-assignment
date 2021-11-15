@@ -17,7 +17,7 @@ const Classes = (props) => {
 
   useEffect(() => {
     classAPI.getClasses().then((resp) => {
-      setClassList(resp.data.classes);
+      setClassList(resp.reverse());
       setBackdrop(false);
     });
   }, []);
