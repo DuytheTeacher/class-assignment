@@ -123,3 +123,45 @@
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i2e21112ndat already exist[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i2ea211112ndat already exist[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: User is teacher[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let1i2e1112ndat is not exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i22ea211112ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGY4YjkzNjEzYzNiZDdhYjc3YWJmYiIsImlhdCI6MTYzNjc5NzMzMSwiZXhwIjoxNjM2ODAwOTMxfQ.t0H8mF-51Z9PpusiPMNvpPKIAZU4cPA72C0gf2s1Tt0[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i22e1a211112ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: user_type Empty[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: user_type Empty[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: user validation failed: account_name: Path `account_name` is required.[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom is not exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "participants_id"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i22e1a2111s12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "participants_id"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i212e11a2111s12ndat already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m

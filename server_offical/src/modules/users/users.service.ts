@@ -6,8 +6,9 @@ import { HttpException } from "@core/exception";
 import gravatar from "gravatar";
 import bcryptjs from "bcryptjs";
 import IUser from "./users.interface";
-import jwt from "jsonwebtoken";
 import UpdateDto from "./dtos/update.dto";
+import { generateJwtToken, randomTokenString } from "@core/utils/helpers";
+import { RefreshTokenSchema } from "@modules/refresh_token";
 
 class UserService {
   public userSchema = UserSchema;
@@ -34,17 +35,19 @@ class UserService {
     });
 
     const salt = await bcryptjs.genSalt(10);
-
     const hashedPassword = await bcryptjs.hash(model.password!, salt);
-    const createUser: IUser = await this.userSchema.create({
+    
+    const createdUser: IUser = await this.userSchema.create({
       ...model,
       reg_type: 0,
       password: hashedPassword,
       avatar: avatar,
       create_at: Date.now(),
     });
+    const refreshToken = await this.generateRefreshToken(createdUser._id);
+    await refreshToken.save();
 
-    return this.createToken(createUser);
+    return generateJwtToken(createdUser._id, refreshToken.token);
   }
 
   public async updateUser(userId: string, model: UpdateDto): Promise<IUser> {
@@ -65,7 +68,7 @@ class UserService {
       updateUserById = await this.userSchema
         .findByIdAndUpdate(userId, {
           ...model,
-          update_at: Date.now(),
+          update_at: new Date(),
           password: hashedPassword,
         })
         .exec();
@@ -73,7 +76,7 @@ class UserService {
       updateUserById = await this.userSchema
         .findByIdAndUpdate(userId, {
           ...model,
-          update_at: Date.now(),
+          update_at: new Date(),
         })
         .exec();
     }
@@ -129,14 +132,13 @@ class UserService {
     return user_updated;
   }
 
-  private createToken(user: IUser): TokenData {
-    const dataInToken: DataStoredInToken = { id: user._id };
-    const secret: string = process.env.JWT_TOKEN_SECRET!;
-    const expiresIn: number = 3600;
-
-    return {
-      token: jwt.sign(dataInToken, secret, { expiresIn: expiresIn }),
-    };
+  private async generateRefreshToken(userId: string) {
+    // create a refresh token that expires in 7 days
+    return new RefreshTokenSchema({
+      user: userId,
+      token: randomTokenString(),
+      expires: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+    });
   }
 }
 

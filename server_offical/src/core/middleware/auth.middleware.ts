@@ -1,3 +1,4 @@
+import { Logger } from "@core/utils";
 import { DataStoredInToken } from "@modules/auth";
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
@@ -20,7 +21,12 @@ const authMiddleware = (req: Request, res: Response, next: NextFunction) => {
 
     next();
   } catch (error) {
-    res.status(401).json({ message: "Invalid token" });
+    Logger.error(`[ERROR] Msg: ${token}`);
+    // if (error.name == 'TokenExpiredError') {
+    //   res.status(401).json({ message: 'Token is expired' });
+    // } else {
+      res.status(401).json({ message: 'Token is not valid' });
+    // }
   }
 
  

@@ -15,13 +15,14 @@ export default class AuthRoute implements Route {
 
   private initializeRoutes() {
     this.router.post(`${this.path}/login`, this.authController.login);
+    this.router.post(`${this.path}/login_google`, this.authController.loginGoogle);
+    this.router.post(`${this.path}/refresh_token`, this.authController.refreshToken);
+    this.router.post(`${this.path}/revoke_token`, this.authController.revokeToken);
 
     this.router.get(
       `${this.path}/get`,
       authMiddleware,
       this.authController.getCurrentLoginUser
     );
-
-    this.router.post(`${this.path}/login_google`, this.authController.loginGoogle);
   }
 }

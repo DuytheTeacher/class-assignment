@@ -1,3 +1,4 @@
+import { DataStoredInToken, TokenData } from '@modules/auth';
 import Route from './routes.interface';
 
-export { Route };
+export { Route, DataStoredInToken, TokenData };

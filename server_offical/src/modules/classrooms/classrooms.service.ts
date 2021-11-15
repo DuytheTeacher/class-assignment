@@ -5,9 +5,10 @@ import CreateDto from "./dtos/create.dto";
 import Classroom from "./classrooms.interface";
 import { UserService } from "@modules/users";
 import { IUser } from "@modules/users/";
-const { ObjectId } = require("mongoose").Types;
 import nodemailer from "nodemailer";
-
+import bcryptjs from "bcryptjs";
+const { ObjectId } = require("mongoose").Types;
+import CryptoJS from "crypto-js";
 class ClassroomService {
   public classroomSchema = ClassroomSchema;
 
@@ -82,9 +83,16 @@ class ClassroomService {
   }
 
   public async joinInClassroom(
-    classroomId: string,
-    userId: string
+    encryptClassroomId: string,
+    encryptUserId: string
   ): Promise<Classroom> {
+    //Decode userId and classroomId
+    const bytesUserId = CryptoJS.AES.decrypt(encryptUserId, process.env.SECRET_KEY!);
+    const userId = bytesUserId.toString(CryptoJS.enc.Utf8);
+
+    const bytesClassroomId = CryptoJS.AES.decrypt(encryptClassroomId, process.env.SECRET_KEY!);
+    const classroomId = bytesClassroomId.toString(CryptoJS.enc.Utf8);
+
     const classroom = await this.classroomSchema.findById(classroomId);
     if (!classroom) {
       throw new HttpException(409, `Classroom is not exist`);
@@ -134,7 +142,10 @@ class ClassroomService {
       throw new HttpException(409, `User already exist in classroom`);
     }
 
-    return `${process.env.ENDPOINT}/api/classrooms/join_in_classroom?userId=${userId}&classId=${classroomId}`;
+    const encryptUserId: string = CryptoJS.AES.encrypt(userId, process.env.SECRET_KEY!).toString();
+    const encryptclassroomId: string = CryptoJS.AES.encrypt(classroomId, process.env.SECRET_KEY!).toString();
+
+    return `${process.env.ENDPOINT}/api/classrooms/join_in_classroom?userId=${encodeURIComponent(encryptUserId)}&classId=${encodeURIComponent(encryptclassroomId)}`;
   }
 
   public async sendClassroomInvitationLink(

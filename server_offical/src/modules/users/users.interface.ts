@@ -8,6 +8,6 @@ export default interface IUser {
     reg_type: number;
     mssv: string;
     avatar: string;
-    create_at: Number;
-    update_at: Number;
+    create_at: Date;
+    update_at: Date;
 }

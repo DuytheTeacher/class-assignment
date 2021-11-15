@@ -19,6 +19,42 @@ export default class AuthController {
     }
   };
 
+  public loginGoogle = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const model: LoginGoogleDto = req.body;
+      const tokenData: TokenData = await this.authService.loginGoogle(model);
+
+      const resp = new BodyRespone("Success", tokenData);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public refreshToken = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const refreshToken = req.body.refreshToken;
+      const tokenData: TokenData = await this.authService.refreshToken(refreshToken);
+
+      const resp = new BodyRespone("Success", tokenData);
+      res.status(200).json(tokenData);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public revokeToken = async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const token = req.header("authorization");
+
+      let notifi = await this.authService.revokeToken(token as string);
+      const resp = new BodyRespone("Success", {});
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public getCurrentLoginUser = async (
     req: Request,
     res: Response,
@@ -36,15 +72,5 @@ export default class AuthController {
     }
   };
 
-  public loginGoogle = async (req: Request, res: Response, next: NextFunction) => {
-    try {
-      const model: LoginGoogleDto = req.body;
-      const tokenData: TokenData = await this.authService.loginGoogle(model);
-
-      const resp = new BodyRespone("Success", tokenData);
-      res.status(200).json(resp);
-    } catch (error) {
-      next(error);
-    }
-  };
+  
 }

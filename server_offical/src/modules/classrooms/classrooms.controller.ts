@@ -84,7 +84,7 @@ export default class ClassroomsController {
       const classId = req.query.classId;
       const classroom: Classroom = await this.classroomService.joinInClassroom(
         classId as string,
-        userId as string
+        userId as string,
       );
 
       const resp = new BodyRespone('Success', classroom);
