@@ -44,6 +44,18 @@ class ClassroomService {
       createTime: Date.now(),
     });
 
+    //xu ly user
+    let class_list_id = user.class_list_id;
+    //update user
+    let updateUserById;
+    class_list_id.push(createClassroom._id);
+    updateUserById = await userService.userSchema.findByIdAndUpdate(
+      userId,
+      {
+        class_list_id: class_list_id,
+      }
+    );
+
     return createClassroom;
   }
 
@@ -64,7 +76,7 @@ class ClassroomService {
         .select({ user: 1 })
     );
     if (!listUser) {
-      throw new HttpException(409, `Classroom is not exist`);
+      throw new HttpException(409, `Classroom or User is not exist`);
     }
 
     return listUser;
@@ -82,6 +94,21 @@ class ClassroomService {
     return listClassroom;
   }
 
+  public async listClassroomByUserId(userId: string): Promise<Array<Classroom>> {
+    const userService = new UserService();
+    const listClassroom = <any>(
+      await userService.userSchema
+        .findOne({ _id: userId })
+        .populate("class_list_id")
+        .select({ classroom: 1 })
+    );
+    if (!listClassroom) {
+      throw new HttpException(409, `User or Classroom is not exist`);
+    }
+
+    return listClassroom;
+  }
+
   public async joinInClassroom(
     encryptClassroomId: string,
     encryptUserId: string
@@ -93,24 +120,43 @@ class ClassroomService {
     const bytesClassroomId = CryptoJS.AES.decrypt(encryptClassroomId, process.env.SECRET_KEY!);
     const classroomId = bytesClassroomId.toString(CryptoJS.enc.Utf8);
 
+     //classroom
     const classroom = await this.classroomSchema.findById(classroomId);
     if (!classroom) {
       throw new HttpException(409, `Classroom is not exist`);
     }
-
     let participants_id = classroom.participants_id;
     const IsExistInClassroom = participants_id.includes(userId);
+
+    //user
+    const userService = new UserService();
+    const user = await userService.userSchema.findById(userId);
+    if (!user) {
+      throw new HttpException(409, `User is not exist`);
+    }
+    let class_list_id = user.class_list_id;
 
     if (IsExistInClassroom === true) {
       throw new HttpException(409, `User already exist in classroom`);
     }
 
+    //update classroom
     let updateClassroomById;
     participants_id.push(userId);
     updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
       classroomId,
       {
         participants_id: participants_id,
+      }
+    );
+
+    //update user
+    let updateUserById;
+    class_list_id.push(classroomId);
+    updateUserById = await userService.userSchema.findByIdAndUpdate(
+      userId,
+      {
+        class_list_id: class_list_id,
       }
     );
 
