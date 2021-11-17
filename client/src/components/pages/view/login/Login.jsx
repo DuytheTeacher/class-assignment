@@ -14,6 +14,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 // Services
 import AuthService from "../../../../services/auth.service";
+import TokenService from '../../../../services/token.service';
 
 const Login = (props) => {
   const { toggleMessage, setUser } = props;
@@ -42,7 +43,7 @@ const Login = (props) => {
     onSubmit: async (values) => {
       try {
         await AuthService.login(values);
-        setUser(JSON.parse(localStorage.getItem('user')));
+        setUser(TokenService.getUser());
         toggleMessage({
           isDisplayed: true,
           content: 'Login successfully!',

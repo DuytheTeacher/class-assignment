@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
 
 const ClassCard = (props) => {
   const { classItem } = props;
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 345 }}>
       <CardMedia
         component="img"
         height="140"
@@ -21,12 +22,11 @@ const ClassCard = (props) => {
           {classItem.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {classItem.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
+        <Button size="small"><Link to={`/class/${classItem._id}`}>Detail</Link></Button>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
