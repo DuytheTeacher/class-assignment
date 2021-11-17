@@ -2350,3 +2350,68 @@
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32m{[39m
+[32m  _id: new ObjectId("61950d8ea65de8ccfe768080"),[39m
+[32m  user: {[39m
+[32m    _id: new ObjectId("6194a670cb26dd71c485759f"),[39m
+[32m    account_name: 'let12i2222e212s21ss222aw2211s11s1ss22snd1at',[39m
+[32m    first_name: 'sssss',[39m
+[32m    last_name: 'Le',[39m
+[32m    email: 'let1ye2922s222222121@gamil.com',[39m
+[32m    password: '$2a$10$CdkiGLU0rjKFCCry14Zhk./czvDFrElnUaQhQspXfn1UfgwiQ0w1O',[39m
+[32m    avatar: '//www.gravatar.com/avatar/114f2b5cb16deb839664f762ee5c7209?size=200&rating=g&default=mm',[39m
+[32m    create_at: 2021-11-17T06:51:28.309Z,[39m
+[32m    user_type: 0,[39m
+[32m    class_list_id: [ new ObjectId("6194a56554588cdfcae0b40e") ],[39m
+[32m    reg_type: 0,[39m
+[32m    update_at: 2021-11-17T06:51:28.309Z,[39m
+[32m    __v: 0,[39m
+[32m    list_object_mssv: [ [Object] ][39m
+[32m  },[39m
+[32m  token: '6cb85f61f7fd9544e4c99577270226a3245e4cf0bf2735f8d6cd0a76f127814ed6673ea95b0d6824',[39m
+[32m  expires: 2021-11-24T14:11:26.544Z,[39m
+[32m  created: 2021-11-17T14:11:26.545Z,[39m
+[32m  __v: 0[39m
+[32m}[39m
+[32minfo[39m: [32m{[39m
+[32m  _id: new ObjectId("61950da4ac2a14ba4d22c8d5"),[39m
+[32m  user: {[39m
+[32m    _id: new ObjectId("61950da4ac2a14ba4d22c8d3"),[39m
+[32m    account_name: 'let12i2222e2122ss21ss222aw22211ss11s1ss22snd1at',[39m
+[32m    first_name: 'sssss',[39m
+[32m    last_name: 'Le',[39m
+[32m    email: 'let1ye2922s222222121@gamil.com',[39m
+[32m    password: '$2a$10$hZ7GGk6GgOIu3GulGYLC3uRy3VkzyNw4b1dlJpVb78YU1VIoQioUq',[39m
+[32m    avatar: '//www.gravatar.com/avatar/114f2b5cb16deb839664f762ee5c7209?size=200&rating=g&default=mm',[39m
+[32m    create_at: 2021-11-17T14:11:48.122Z,[39m
+[32m    user_type: 1,[39m
+[32m    class_list_id: [],[39m
+[32m    reg_type: 0,[39m
+[32m    update_at: 2021-11-17T14:11:48.123Z,[39m
+[32m    list_object_mssv: [],[39m
+[32m    __v: 0[39m
+[32m  },[39m
+[32m  token: '7eac40a5d43a4af4c97b8319f63a8d922125f905ce369727aae895c8e379a0d2e5c5fd1ad0beb76f',[39m
+[32m  expires: 2021-11-24T14:11:48.165Z,[39m
+[32m  created: 2021-11-17T14:11:48.165Z,[39m
+[32m  __v: 0[39m
+[32m}[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTRhNjcwY2IyNmRkNzFjNDg1NzU5ZiIsImlhdCI6MTYzNzEzMTg4OCwiZXhwIjoxNjM3MTM1NDg4fQ.AunlGAK2Q_SEI8-7EyhDF066My_WKSz7xLkJLe67vog[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m

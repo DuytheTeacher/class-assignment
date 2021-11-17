@@ -116,7 +116,7 @@ export default class ClassroomsController {
     next: NextFunction
   ) => {
     try {
-      const userId = req.user.id;
+      const userId = req.body.id_receiver;
       const classId = req.body.classId;
       const invitationLink: string =
         await this.classroomService.createClassroomInvitationLink(

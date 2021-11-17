@@ -35,6 +35,22 @@ export default class UserController {
     }
   };
 
+  public getUserByEmail = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const email = req.query.email;
+      const user: IUser = await this.userService.getUserByEmail(email as string);
+
+      const resp = new BodyRespone('Success', user);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public updateUser = async (
     req: Request,
     res: Response,

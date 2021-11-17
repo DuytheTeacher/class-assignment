@@ -103,6 +103,15 @@ class UserService {
     return user;
   }
 
+  public async getUserByEmail(email: string): Promise<IUser> {
+    const user = await this.userSchema.findOne({ email: email }).exec();
+    if (!user) {
+      throw new HttpException(404, `User is not exists`);
+    }
+
+    return user;
+  }
+
   public async mappingMSSVWithAccount(
     mssv: string,
     userId: string,
