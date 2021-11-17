@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Components
 import { ButtonAppBar } from './components/common';
-import { Classes, Login } from './components/pages/view';
+import { Classes, Login, Register } from './components/pages/view';
 import Message from './components/common/message/Message';
 
 function App() {
@@ -29,21 +29,46 @@ function App() {
     <BrowserRouter>
       <div className="App">
         {/* AppBar */}
-        <ButtonAppBar handleOpenNewClassDialog={handleOpenNewClassDialog} user={user} setUser={setUser}/>
+        <ButtonAppBar
+          handleOpenNewClassDialog={handleOpenNewClassDialog}
+          user={user}
+          setUser={setUser}
+        />
         <Routes>
           {/* Login block */}
           <Route
             path="/login"
-            element={user ? <Navigate to="/"/> : <Login toggleMessage={toggleMessage} setUser={setUser}/>}
+            element={
+              user ? (
+                <Navigate to="/" />
+              ) : (
+                <Login toggleMessage={toggleMessage} setUser={setUser} />
+              )
+            }
+          />
+          {/* Register block */}
+          <Route
+            path="/register"
+            element={
+              user ? (
+                <Navigate to="/" />
+              ) : (
+                <Register toggleMessage={toggleMessage} setUser={setUser} />
+              )
+            }
           />
           {/* Class list block */}
           <Route
             path="/"
             element={
-              <Classes
-                isDialogOpened={isDialogOpened}
-                handleOpenNewClassDialog={handleOpenNewClassDialog}
-              />
+              user ? (
+                <Classes
+                  isDialogOpened={isDialogOpened}
+                  handleOpenNewClassDialog={handleOpenNewClassDialog}
+                />
+              ) : (
+                <Navigate to="/login" />
+              )
             }
           />
         </Routes>

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './Login.module.scss';
 
 // UI Components
@@ -110,7 +110,7 @@ const Login = (props) => {
             </div>
             <div className={styles.Button}>
               <Button variant="outlined" size="large" fullWidth>
-                Register
+                <Link to="/register">Register</Link>
               </Button>
             </div>
           </div>

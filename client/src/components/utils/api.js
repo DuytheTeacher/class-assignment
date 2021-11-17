@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const classAPIPrefix = 'http://localhost:5000/api/classrooms';
+const classAPIPrefix = 'https://classroom-midterm.herokuapp.com/api/classrooms';
 const randomImageUrl = 'https://source.unsplash.com/345x140/?learn,education';
 
 export const images = {
