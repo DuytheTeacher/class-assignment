@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import IUser from "./users.interface";
+import { IUser } from "./users.interface";
 const { ObjectId } = require("mongoose").Types;
 
 const UserSchema = new mongoose.Schema({
@@ -48,13 +48,20 @@ const UserSchema = new mongoose.Schema({
   reg_type: {
     type: Number,
   },
-  mssv: {
-    type: String,
-    unique: true,
-    index: true,
-  }
+  list_object_mssv: [
+    {
+      classroomId: {
+        type: String,
+        required: true,
+      },
+      mssv: {
+        type: String,
+        required: true,
+      },
+    }
+  ]
 });
 
-const User = mongoose.model<IUser & mongoose.Document>("user", UserSchema)
+const User = mongoose.model<IUser & mongoose.Document>("user", UserSchema);
 
-export default User
+export default User;

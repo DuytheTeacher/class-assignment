@@ -60,9 +60,11 @@ export default class UserController {
     try {
       const userId = req.user.id;
       const mssv = req.body.mssv;
+      const classroomId = req.body.classroomId;
       const user: IUser = await this.userService.mappingMSSVWithAccount(
         mssv,
-        userId
+        userId,
+        classroomId
       );
 
       const resp = new BodyRespone('Success', user);

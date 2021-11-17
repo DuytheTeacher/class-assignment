@@ -5,10 +5,12 @@ import { isEmptyObject } from "@core/utils";
 import { HttpException } from "@core/exception";
 import gravatar from "gravatar";
 import bcryptjs from "bcryptjs";
-import IUser from "./users.interface";
+import { IUser, ObjectMssv } from "./users.interface";
 import UpdateDto from "./dtos/update.dto";
 import { generateJwtToken, randomTokenString } from "@core/utils/helpers";
 import { RefreshTokenSchema } from "@modules/refresh_token";
+// import ClassroomService from "@modules/classrooms/classrooms.service";
+import { Classroom, ClassroomSchema } from "@modules/classrooms";
 
 class UserService {
   public userSchema = UserSchema;
@@ -36,7 +38,7 @@ class UserService {
 
     const salt = await bcryptjs.genSalt(10);
     const hashedPassword = await bcryptjs.hash(model.password!, salt);
-    
+
     const createdUser: IUser = await this.userSchema.create({
       ...model,
       reg_type: 0,
@@ -103,20 +105,51 @@ class UserService {
 
   public async mappingMSSVWithAccount(
     mssv: string,
-    userId: string
+    userId: string,
+    classroomId: string
   ): Promise<IUser> {
     const user = await this.userSchema.findById(userId).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
 
+    // const classroomService = new ClassroomService();
+    const classroom = await ClassroomSchema.findById(classroomId);
+    if (!classroom) {
+      throw new HttpException(404, `Classroom is not exists`);
+    }
+
+    for (let i = 0; i < classroom.participants_id.length; i++ ) {
+      const userInClass = await this.userSchema.findById(classroom.participants_id[i]).exec();
+      if (userInClass) {
+        for (let i = 0; i < userInClass.list_object_mssv.length; i++) {
+          let objectMssv = userInClass.list_object_mssv[0];
+        
+          let classInArray = objectMssv.classroomId;
+          let mssvInArray = objectMssv.mssv;
+          if (
+            classInArray == classroomId &&
+            mssvInArray == mssv
+          ) {
+            throw new HttpException(409, "Mssv already exist in classroom");
+          }
+        }
+      }
+    }
+
     if (user.user_type === 1) {
       throw new HttpException(400, `User is teacher`);
     }
 
+    let list_object_mssv_temp = user.list_object_mssv;
+    list_object_mssv_temp.push({
+      classroomId: classroomId,
+      mssv: mssv
+    });
+
     const updateUserById = await this.userSchema
       .findByIdAndUpdate(userId, {
-        mssv: mssv,
+        list_object_mssv: list_object_mssv_temp,
       })
       .exec();
 

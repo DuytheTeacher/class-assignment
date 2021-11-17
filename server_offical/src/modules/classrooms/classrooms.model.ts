@@ -11,13 +11,19 @@ const ClassroomSchema = new mongoose.Schema({
     minlength: 3,
     maxlength: 50,
   },
-  auth_id: {
-    type: String,
-    required: true,
+  auth: {
+    auth_id: { type: String, required: true },
+    name: { type: String, required: true },
   },
   description: {
     type: String,
     required: true,
+  },
+  thumbnail: {
+    type: String,
+  },
+  backdrop: {
+    type: String,
   },
   participants_id: [
     {
@@ -27,7 +33,7 @@ const ClassroomSchema = new mongoose.Schema({
   ],
   createTime: {
     type: Date,
-    default: Date.now()
+    default: Date.now(),
   },
 });
 

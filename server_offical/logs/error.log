@@ -184,3 +184,41 @@
 [31merror[39m: [31m[ERROR] - 409 - Msg: Classroom is not exist[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop tha2y b2aas2s2s2ss1 already exist[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i222e211a221111s1s2snd1at already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Email already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTNmNDJlOWI1NzA1YjBmNGIxMDg3OSIsImlhdCI6MTYzNzA4NjI1NSwiZXhwIjoxNjM3MDg5ODU1fQ.CZlmURIlhp-wr2qT1iKSRCPWV5A-qThNs7UubvAb1H0[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTBjYTJjNGNkYjk2MWE1ZDA1NGQxNiIsImlhdCI6MTYzNjg3ODg5MiwiZXhwIjoxNjM2ODgyNDkyfQ.qTZND5B4t6gEO9IkQUGkgyHoFigjVYxEjEPsUX8evUU[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: users_1.UserService is not a constructor[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop tha2y b122aas2ss2ss2ss1 already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "0" (type string) at path "_id" for model "user"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "0" (type string) at path "_id" for model "user"[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Mssv already exist in classroom[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTNmNDJlOWI1NzA1YjBmNGIxMDg3OSIsImlhdCI6MTYzNzA4NjI1NSwiZXhwIjoxNjM3MDg5ODU1fQ.CZlmURIlhp-wr2qT1iKSRCPWV5A-qThNs7UubvAb1H0[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGY1ZjBiZDcyYjYyMTc0MzNhOGVjMyIsImlhdCI6MTYzNjg2MzI3MSwiZXhwIjoxNjM2ODY2ODcxfQ.Hzu4CY4ZTOXGdFAk60ltGYI_f0PFZb8tsegLk7x0fx4[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTFhODVmZjQ2NGRjNmQ0YmEwZmI3OCIsImlhdCI6MTYzNzA4MzI2MSwiZXhwIjoxNjM3MDg2ODYxfQ.Fbi7enCdAV9Gu8Rlmuc6uEJwoboMXuToveLYkPw_RKk[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTFhODVmZjQ2NGRjNmQ0YmEwZmI3OCIsImlhdCI6MTYzNzA4MzI2MSwiZXhwIjoxNjM3MDg2ODYxfQ.Fbi7enCdAV9Gu8Rlmuc6uEJwoboMXuToveLYkPw_RKk[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTNmNDJlOWI1NzA1YjBmNGIxMDg3OSIsImlhdCI6MTYzNzA4NjI1NSwiZXhwIjoxNjM3MDg5ODU1fQ.CZlmURIlhp-wr2qT1iKSRCPWV5A-qThNs7UubvAb1H0[39m

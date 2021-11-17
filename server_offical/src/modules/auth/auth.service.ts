@@ -50,6 +50,10 @@ class AuthService {
 
     const user = await this.userSchema.findOne({ email: model.email }).exec();
     if (user) {
+      if (user.reg_type != 1) {
+        throw new HttpException(400, "Email already exist");
+      }
+      
       const refreshToken = await this.generateRefreshToken(user._id);
       await refreshToken.save();
 

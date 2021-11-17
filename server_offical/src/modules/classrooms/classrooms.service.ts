@@ -3,11 +3,9 @@ import { HttpException } from "@core/exception";
 import ClassroomSchema from "./classrooms.model";
 import CreateDto from "./dtos/create.dto";
 import Classroom from "./classrooms.interface";
-import { UserService } from "@modules/users";
-import { IUser } from "@modules/users/";
+import { UserSchema } from "@modules/users";
+import { IUser, ObjectMssv } from "@modules/users/";
 import nodemailer from "nodemailer";
-import bcryptjs from "bcryptjs";
-const { ObjectId } = require("mongoose").Types;
 import CryptoJS from "crypto-js";
 class ClassroomService {
   public classroomSchema = ClassroomSchema;
@@ -17,8 +15,8 @@ class ClassroomService {
       throw new HttpException(400, "Model is empty");
     }
 
-    const userService = new UserService();
-    const user = await userService.userSchema.findById(userId).exec();
+    // const userService = new UserService();
+    const user = await UserSchema.findById(userId).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -39,7 +37,10 @@ class ClassroomService {
 
     const createClassroom: Classroom = await this.classroomSchema.create({
       ...model,
-      auth_id: userId,
+      auth: {
+        auth_id: userId,
+        name: `${user.last_name} ${user.first_name}`
+      },
       participants_id: [userId],
       createTime: Date.now(),
     });
@@ -49,7 +50,7 @@ class ClassroomService {
     //update user
     let updateUserById;
     class_list_id.push(createClassroom._id);
-    updateUserById = await userService.userSchema.findByIdAndUpdate(
+    updateUserById = await UserSchema.findByIdAndUpdate(
       userId,
       {
         class_list_id: class_list_id,
@@ -95,9 +96,9 @@ class ClassroomService {
   }
 
   public async listClassroomByUserId(userId: string): Promise<Array<Classroom>> {
-    const userService = new UserService();
+    // const userService = new UserService();
     const listClassroom = <any>(
-      await userService.userSchema
+      await UserSchema
         .findOne({ _id: userId })
         .populate("class_list_id")
         .select({ classroom: 1 })
@@ -129,8 +130,8 @@ class ClassroomService {
     const IsExistInClassroom = participants_id.includes(userId);
 
     //user
-    const userService = new UserService();
-    const user = await userService.userSchema.findById(userId);
+    // const userService = new UserService();
+    const user = await UserSchema.findById(userId);
     if (!user) {
       throw new HttpException(409, `User is not exist`);
     }
@@ -153,7 +154,7 @@ class ClassroomService {
     //update user
     let updateUserById;
     class_list_id.push(classroomId);
-    updateUserById = await userService.userSchema.findByIdAndUpdate(
+    updateUserById = await UserSchema.findByIdAndUpdate(
       userId,
       {
         class_list_id: class_list_id,
