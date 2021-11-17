@@ -36,6 +36,13 @@ export default class ClassroomsRoute implements Route {
     );
 
     this.router.get(
+      `${this.path}/get_list_classroom_by_user`,
+      authMiddleware,
+      this.classroomsController.listClassroomByUserId
+    );
+
+
+    this.router.get(
       `${this.path}/list_classroom`,
       this.classroomsController.listClassroom
     );

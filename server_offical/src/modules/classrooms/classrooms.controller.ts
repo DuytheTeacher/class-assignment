@@ -58,6 +58,22 @@ export default class ClassroomsController {
     }
   };
 
+  public listClassroomByUserId = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userId = req.user.id;
+      const classroom: Array<Classroom> =
+        await this.classroomService.listClassroomByUserId(userId as string);
+      const resp = new BodyRespone('Success', classroom);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
   public listClassroom = async (
     req: Request,
     res: Response,

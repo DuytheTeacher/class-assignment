@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import IUser from "./users.interface";
+const { ObjectId } = require("mongoose").Types;
 
 const UserSchema = new mongoose.Schema({
   account_name: {
@@ -38,6 +39,12 @@ const UserSchema = new mongoose.Schema({
   user_type: {
     type: Number,
   },
+  class_list_id: [
+    {
+      type: ObjectId,
+      ref: "classroom",
+    },
+  ],
   reg_type: {
     type: Number,
   },

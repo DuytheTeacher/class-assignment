@@ -165,3 +165,22 @@
 [31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i212e11a2111s12ndat already exist[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: Invalid refresh token[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'push')[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTFhODVmZjQ2NGRjNmQ0YmEwZmI3OCIsImlhdCI6MTYzNjk4MTUyNCwiZXhwIjoxNjM2OTg1MTI0fQ.i_cqWmEvYElmBTrRcW4c-Jlsv8Kjyn1otTCVDhsRcOc[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i212e11a21111s12nd1at already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop tha2y baas2ss2s already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'push')[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i222e11a21111s12nd1at already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'push')[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read properties of undefined (reading 'push')[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop tha2y b2aas2ss2s already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGY1ZjBiZDcyYjYyMTc0MzNhOGVjMyIsImlhdCI6MTYzNjgyMjgxNSwiZXhwIjoxNjM2ODI2NDE1fQ.hdQ2JbEKn_luoqBJvS09ZtPC-0KNcxEamQe1jSTf-dw[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom or User is not exist[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOGY1ZjBiZDcyYjYyMTc0MzNhOGVjMyIsImlhdCI6MTYzNjgyMjgxNSwiZXhwIjoxNjM2ODI2NDE1fQ.hdQ2JbEKn_luoqBJvS09ZtPC-0KNcxEamQe1jSTf-dw[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom is not exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Classroom name Lop tha2y b2aas2s2s2ss1 already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i222e211a221111s1s2snd1at already exist[39m

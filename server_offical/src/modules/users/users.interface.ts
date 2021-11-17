@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongoose").Types;
 export default interface IUser {
     _id: string;
     first_name: string;
@@ -7,6 +8,7 @@ export default interface IUser {
     user_type: number;
     reg_type: number;
     mssv: string;
+    class_list_id: Array<typeof ObjectId>;
     avatar: string;
     create_at: Date;
     update_at: Date;
