@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/auth';
+const API_URL = 'https://classroom-midterm.herokuapp.com/api/auth';
 
 const login = async ({ username, password }) => {
   const resp = await axios.post(`${API_URL}/login`, {
