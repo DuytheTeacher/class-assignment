@@ -17,7 +17,7 @@ import Settings from '@mui/icons-material/Settings';
 import Logout from '@mui/icons-material/Logout';
 
 // Services
-import AuthService from "../../../services/auth.service";
+import AuthService from '../../../services/auth.service';
 
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -36,8 +36,9 @@ const ButtonAppBar = (props) => {
   const onLogout = () => {
     AuthService.logout();
     setUser({});
-    navigate('/login');
-  }
+    navigate('login');
+    window.location.reload();
+  };
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" enableColorOnDark={true} color="transparent">
@@ -64,7 +65,17 @@ const ButtonAppBar = (props) => {
                   </Tooltip>
                 </IconButton>
               )}
-              <Avatar alt="Remy Sharp" src={user.avatar} onClick={handleClick} style={{'cursor': 'pointer'}}/>
+              <Typography
+                variant="h6"
+                component="div"
+                sx={{ mr : 2 }}
+              >{`${user.first_name} ${user.last_name}`}</Typography>
+              <Avatar
+                alt="Remy Sharp"
+                src={user.avatar}
+                onClick={handleClick}
+                style={{ cursor: 'pointer' }}
+              />
               <Menu
                 anchorEl={anchorEl}
                 open={open}
