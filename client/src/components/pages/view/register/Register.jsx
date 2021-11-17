@@ -13,6 +13,7 @@ import Switch from '@mui/material/Switch';
 // Services
 import UserService from '../../../../services/user.service';
 import AuthService from '../../../../services/auth.service';
+import TokenService from '../../../../services/token.service';
 
 const Register = (props) => {
   const { toggleMessage, setUser } = props;
@@ -67,7 +68,7 @@ const Register = (props) => {
       try {
         await UserService.register(values);
         await AuthService.login(values);
-        setUser(JSON.parse(localStorage.getItem('user')));
+        setUser(TokenService.getUser());
         toggleMessage({
           isDisplayed: true,
           content: 'Create new account successfully!',

@@ -8,13 +8,14 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 // Components
 import { ButtonAppBar } from './components/common';
-import { Classes, Login, Register } from './components/pages/view';
+import { ClassDetail, Classes, Login, Register } from './components/pages/view';
 import Message from './components/common/message/Message';
+import TokenService from './services/token.service';
 
 function App() {
   const [isDialogOpened, setIsDialogOpened] = useState(false);
   const [message, setMessage] = useState(false);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
+  const [user, setUser] = useState(TokenService.getUser());
   const toggleMessage = (
     value = { isDisplayed: false, content: '', type: 'success' }
   ) => {
@@ -70,6 +71,11 @@ function App() {
                 <Navigate to="/login" />
               )
             }
+          />
+          {/* Class detail block */}
+          <Route
+            path="/class/:id"
+            element={user ? <ClassDetail /> : <Navigate to="/login" />}
           />
         </Routes>
         <Message

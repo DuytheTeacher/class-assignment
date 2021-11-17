@@ -1,0 +1,43 @@
+.ClassNews {
+    max-width: 1000px;
+    margin: auto;
+
+    .BackdropContainer {
+        width: 100%;
+        border-radius: 5px;
+        height: 30vh;
+        position: relative;
+
+        .Backdrop {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 5px;
+        }
+
+        .ClassName {
+            position: absolute;
+            left: 3rem;
+            bottom: 0;
+            color: #FFF;
+        }
+    }
+
+    .Content {
+        width: 100%;
+        padding: 2rem 0;
+
+        .InvitationBox {
+            padding: 1rem;
+
+            .InvitationTop {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    }
+}
