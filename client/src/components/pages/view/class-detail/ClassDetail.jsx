@@ -52,7 +52,7 @@ const ClassDetail = () => {
   const path = location.pathname.split('/')[2];
   const [value, setValue] = useState(0);
 
-  const [classDetail, setClassDetail] = useState();
+  const [classDetail, setClassDetail] = useState({});
   const [participants, setParticipants] = useState([]);
 
   const handleChange = (event, newValue) => {

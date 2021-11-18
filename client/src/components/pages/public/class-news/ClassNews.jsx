@@ -65,7 +65,7 @@ const ClassNews = (props) => {
                 </Menu>
               </div>
               <div className={styles.InvitationBot}>
-                  <span className={styles.Code}>{'hehe'}</span>
+                  <span className={styles.Code}>{}</span>
               </div>
             </Box>
           </Grid>
