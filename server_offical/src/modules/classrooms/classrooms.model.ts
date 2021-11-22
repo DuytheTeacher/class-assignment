@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import Classroom from "./classrooms.interface";
+import mongoose from 'mongoose';
+import Classroom from './classrooms.interface';
 
-const { ObjectId } = require("mongoose").Types;
+const { ObjectId } = require('mongoose').Types;
 
 const ClassroomSchema = new mongoose.Schema({
   name: {
@@ -28,7 +28,7 @@ const ClassroomSchema = new mongoose.Schema({
   participants_id: [
     {
       type: ObjectId,
-      ref: "user",
+      ref: 'user',
     },
   ],
   createTime: {
@@ -38,7 +38,7 @@ const ClassroomSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model<Classroom & mongoose.Document>(
-  "classroom",
+  'classroom',
   ClassroomSchema
 );
 
