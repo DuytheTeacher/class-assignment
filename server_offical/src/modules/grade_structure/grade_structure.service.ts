@@ -102,6 +102,33 @@ class GradeStructureService {
     }
     return gradesStructures;
   }
+
+  public async delete(
+    userId: string,
+    model: Array<UpdateGradeStructureInterface>,
+    classId: string
+  ): Promise<Array<GradeStructureInterface>> {
+    if (isEmptyObject(model) === true) {
+      throw new HttpException(400, 'Model is empty');
+    }
+    let gradesStructures = [];
+    for (let i = 0; i < model.length; i++) {
+      const updateGradeStructure = await this.GradeSchema.findOneAndDelete({
+        _id: model[i]._id,
+        name: model[i].name,
+        auth: userId,
+        classroom: classId,
+      });
+      if (!updateGradeStructure) {
+        throw new HttpException(
+          409,
+          `GradeStructure name ${model[i].name} already exist ,  not permission or can not found GradeStructure in Classroom `
+        );
+      }
+      gradesStructures.push(updateGradeStructure);
+    }
+    return gradesStructures;
+  }
 }
 
 export default GradeStructureService;
