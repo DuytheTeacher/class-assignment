@@ -31,9 +31,9 @@ export default class GradeStructureController {
   ) => {
     try {
       const userId = req.user.id;
-      const classId = req.params.classId;
+      const classId = req.query.classId;
       const listGradeStructure: Array<GradeStructureInterface> =
-        await this.gradeStructureService.listGrades(userId, classId);
+        await this.gradeStructureService.listGrades(userId, classId as string);
 
       const resp = new BodyRespone('Success', listGradeStructure);
       res.status(200).json(resp);

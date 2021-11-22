@@ -22,7 +22,7 @@ export default class GradeStructureRoute implements Route {
     );
 
     this.router.get(
-      `${this.path}/get/:classId`,
+      `${this.path}/get`,
       authMiddleware,
       this.gradeStructureController.listGrades
     );
