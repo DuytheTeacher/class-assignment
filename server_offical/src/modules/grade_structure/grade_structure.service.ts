@@ -85,7 +85,6 @@ class GradeStructureService {
       const updateGradeStructure = await this.GradeSchema.findOneAndUpdate(
         {
           _id: model[i]._id,
-          name: model[i].name,
           auth: userId,
           classroom: classId,
         },

@@ -272,3 +272,10 @@
 [31merror[39m: [31m[ERROR] - 400 - Msg: User is student [39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ" (type string) at path "_id" for model "classroom"[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "6194defef3279b5bde7501fe1" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: maxScore_1 dup key: { maxScore: 2 }[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: maxScore_1 dup key: { maxScore: 2 }[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: maxScore_1 dup key: { maxScore: 2 }[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: maxScore_1 dup key: { maxScore: 4 }[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: GradeStructure name bt102 already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: GradeStructure name bt102 already exist ,  not permission or can not found GradeStructure in Classroom [39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: name_1 dup key: { name: "bt102" }[39m
