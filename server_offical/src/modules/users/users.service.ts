@@ -159,19 +159,16 @@ class UserService {
     const updateUserById = await this.userSchema
       .findByIdAndUpdate(userId, {
         list_object_mssv: list_object_mssv_temp,
-      })
+      },
+      {new: true}
+      )
       .exec();
 
     if (!updateUserById) {
       throw new HttpException(409, "Error when mapping");
     }
 
-    const user_updated = await this.userSchema.findById(userId).exec();
-    if (!user_updated) {
-      throw new HttpException(404, `User is not exists`);
-    }
-
-    return user_updated;
+    return updateUserById;
   }
 
   private async generateRefreshToken(userId: string) {

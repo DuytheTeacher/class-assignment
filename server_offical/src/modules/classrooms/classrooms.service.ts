@@ -142,19 +142,18 @@ class ClassroomService {
     }
 
     //update classroom
-    let updateClassroomById;
     participants_id.push(userId);
-    updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
+    let updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
       classroomId,
       {
         participants_id: participants_id,
-      }
+      },
+      { new: true }
     );
 
     //update user
-    let updateUserById;
     class_list_id.push(classroomId);
-    updateUserById = await UserSchema.findByIdAndUpdate(
+    let updateUserById = await UserSchema.findByIdAndUpdate(
       userId,
       {
         class_list_id: class_list_id,
@@ -165,12 +164,7 @@ class ClassroomService {
       throw new HttpException(409, "Error when update classroom");
     }
 
-    const classroom_updated = await this.classroomSchema.findById(classroomId);
-    if (!classroom_updated) {
-      throw new HttpException(404, `Classroom is not exists`);
-    }
-
-    return classroom_updated;
+    return updateClassroomById;
   }
 
   public async createClassroomInvitationLink(
