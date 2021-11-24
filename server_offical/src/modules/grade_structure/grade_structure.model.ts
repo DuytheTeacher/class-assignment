@@ -24,6 +24,10 @@ const GradeStructureSchema = new mongoose.Schema(
       required: true,
       ref: 'classroom',
     },
+    ordinal: {
+      type: Number,
+      required: true,
+    }
   },
   { timestamps: true }
 );

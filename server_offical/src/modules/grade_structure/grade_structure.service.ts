@@ -64,7 +64,7 @@ class GradeStructureService {
     if (user.user_type === 0) {
       throw new HttpException(400, `User is student `);
     }
-    const listGrades = <any>await this.GradeSchema.find();
+    const listGrades = <any>await this.GradeSchema.find({classroom: classId}).sort({ordinal: 1});
 
     if (!listGrades) {
       throw new HttpException(409, `Grades is not exist`);

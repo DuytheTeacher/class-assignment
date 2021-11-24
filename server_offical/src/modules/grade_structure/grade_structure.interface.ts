@@ -5,7 +5,8 @@ export default interface GradeStructureInterface {
   name: string;
   auth: string;
   classroom: string;
-  maxScore: Number;
+  maxScore: number;
+  ordinal: number;
   createAt: Date;
   updateAt: Date;
 }

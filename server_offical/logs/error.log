@@ -223,6 +223,7 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTFhODVmZjQ2NGRjNmQ0YmEwZmI3OCIsImlhdCI6MTYzNzA4MzI2MSwiZXhwIjoxNjM3MDg2ODYxfQ.Fbi7enCdAV9Gu8Rlmuc6uEJwoboMXuToveLYkPw_RKk[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTNmNDJlOWI1NzA1YjBmNGIxMDg3OSIsImlhdCI6MTYzNzA4NjI1NSwiZXhwIjoxNjM3MDg5ODU1fQ.CZlmURIlhp-wr2qT1iKSRCPWV5A-qThNs7UubvAb1H0[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTRhNjcwY2IyNmRkNzFjNDg1NzU5ZiIsImlhdCI6MTYzNzEzMTg4OCwiZXhwIjoxNjM3MTM1NDg4fQ.AunlGAK2Q_SEI8-7EyhDF066My_WKSz7xLkJLe67vog[39m
+<<<<<<< HEAD
 [31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token } in JSON at position 102[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'length' of undefined[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'length' of undefined[39m
@@ -279,3 +280,11 @@
 [31merror[39m: [31m[ERROR] - 409 - Msg: GradeStructure name bt102 already exist[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: GradeStructure name bt102 already exist ,  not permission or can not found GradeStructure in Classroom [39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: E11000 duplicate key error collection: myFirstDatabase.gradestructures index: name_1 dup key: { name: "bt102" }[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTUwZGE0YWMyYTE0YmE0ZDIyYzhkMyIsImlhdCI6MTYzNzE1ODMwOCwiZXhwIjoxNjM3MTYxOTA4fQ.q76cs5_J0AI_GsyAljzhkUTJGHYxLDNYEvFaDH2uFSE[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
+=======
+>>>>>>> f833f72debe2a82854401d80813a6ae5ce92be29
