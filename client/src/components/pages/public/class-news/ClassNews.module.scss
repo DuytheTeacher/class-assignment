@@ -38,6 +38,18 @@
                 justify-content: space-between;
                 align-items: center;
             }
+
+            .InvitationText {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .GradeTitleText {
+                display: inline-block;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 0.5rem;
+            }
         }
     }
 }

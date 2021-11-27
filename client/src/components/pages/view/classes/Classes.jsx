@@ -14,7 +14,7 @@ import { Message } from '../../../common';
 
 // Services
 import ClassroomService from '../../../../services/classroom.service';
-import UserService from '../../../../services/user.service';
+// import UserService from '../../../../services/user.service';
 
 const Classes = (props) => {
   const { isDialogOpened, handleOpenNewClassDialog } = props;
