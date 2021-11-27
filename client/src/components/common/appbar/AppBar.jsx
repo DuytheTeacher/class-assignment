@@ -19,31 +19,43 @@ import Logout from '@mui/icons-material/Logout';
 // Services
 import AuthService from '../../../services/auth.service';
 
+// Libraries
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const ButtonAppBar = (props) => {
   const { user, setUser, handleOpenNewClassDialog } = props;
+
   const [anchorEl, setAnchorEl] = useState(null);
+
   const navigate = useNavigate();
+
   const open = Boolean(anchorEl);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   const onLogout = () => {
     AuthService.logout();
     setUser({});
     navigate('login');
     window.location.reload();
   };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" enableColorOnDark={true} color="transparent">
         <Toolbar>
-          <Typography variant="h4" component="div" sx={{ flexGrow: 1, color: '#1976D2' }}>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ flexGrow: 1, color: '#1976D2' }}
+          >
             <Link to="/">Classroom</Link>
           </Typography>
           {!user ? (
@@ -52,7 +64,7 @@ const ButtonAppBar = (props) => {
             </Button>
           ) : (
             <>
-              {user.user_type && (
+              {user.user_type && window.location.pathname === '/' && (
                 <IconButton
                   size="large"
                   edge="start"
@@ -68,7 +80,7 @@ const ButtonAppBar = (props) => {
               <Typography
                 variant="h6"
                 component="div"
-                sx={{ mr : 2 }}
+                sx={{ mr: 2 }}
               >{`${user.first_name} ${user.last_name}`}</Typography>
               <Avatar
                 alt="Remy Sharp"
