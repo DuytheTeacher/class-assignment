@@ -43,12 +43,20 @@
                 font-weight: bold;
                 text-transform: uppercase;
             }
+        }
+
+        .GradeStuctureBox {
+            padding: 1rem;
 
             .GradeTitleText {
                 display: inline-block;
+                margin-top: 0.5rem;
                 font-weight: bold;
                 text-transform: uppercase;
-                margin-bottom: 0.5rem;
+            }
+
+            .EditButton {
+                float: right;
             }
         }
     }
