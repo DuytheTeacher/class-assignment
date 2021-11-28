@@ -1,5 +1,5 @@
 // Librabries
-import React from "react";
+import React from 'react';
 // UI Components
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
@@ -16,7 +16,6 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 });
 
 const FullScreenDialog = (props) => {
-
   const { notifyOpenDialog, isOpenDialog } = props;
 
   return (
@@ -40,14 +39,18 @@ const FullScreenDialog = (props) => {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               Grades Structure
             </Typography>
-            <Button autoFocus color="inherit" onClick={() => notifyOpenDialog(false)}>
+            <Button
+              autoFocus
+              color="inherit"
+              onClick={() => notifyOpenDialog(false)}
+            >
               save
             </Button>
           </Toolbar>
-          <GradesStructureForm />
         </AppBar>
+        <GradesStructureForm />
       </Dialog>
     </div>
   );
-}
+};
 export default FullScreenDialog;
