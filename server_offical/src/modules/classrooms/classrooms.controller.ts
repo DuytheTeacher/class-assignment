@@ -3,7 +3,7 @@ import { NextFunction, Request, Response } from 'express';
 import BodyRespone from '@core/response_default';
 import CreateDto from './dtos/create.dto';
 import ClassroomService from './classrooms.service';
-import Classroom from './classrooms.interface';
+import { Classroom } from './classrooms.interface';
 
 export default class ClassroomsController {
   private classroomService = new ClassroomService();
@@ -116,7 +116,7 @@ export default class ClassroomsController {
     next: NextFunction
   ) => {
     try {
-      const userId = req.body.id_receiver;
+      const userId = req.body.idReceiver;
       const classId = req.body.classId;
       const invitationLink: string =
         await this.classroomService.createClassroomInvitationLink(
@@ -150,6 +150,28 @@ export default class ClassroomsController {
         );
 
       const resp = new BodyRespone('Success', {});
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public uploadListStudents = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userId = req.user.id;
+      const classId = req.body.classId;
+      const file = req.file;
+      const notification: string =
+        await this.classroomService.uploadListStudents(
+          file,
+          classId
+        );
+
+      const resp = new BodyRespone('Success', {notification});
       res.status(200).json(resp);
     } catch (error) {
       next(error);

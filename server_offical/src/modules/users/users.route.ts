@@ -41,9 +41,9 @@ export default class UsersRoute implements Route {
     );
 
     this.router.post(
-      `${this.path}/mapping_mssv`,
+      `${this.path}/mapping_studentid`,
       authMiddleware,
-      this.usersController.mappingMSSVWithAccount
+      this.usersController.mappingStudentIdWithAccount
     );
   }
 }

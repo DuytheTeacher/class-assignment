@@ -5,7 +5,7 @@ import { isEmptyObject } from "@core/utils";
 import { HttpException } from "@core/exception";
 import gravatar from "gravatar";
 import bcryptjs from "bcryptjs";
-import { IUser, ObjectMssv } from "./users.interface";
+import { IUser, ObjectStudentId } from "./users.interface";
 import UpdateDto from "./dtos/update.dto";
 import { generateJwtToken, randomTokenString } from "@core/utils/helpers";
 import { RefreshTokenSchema } from "@modules/refresh_token";
@@ -112,8 +112,8 @@ class UserService {
     return user;
   }
 
-  public async mappingMSSVWithAccount(
-    mssv: string,
+  public async mappingStudentIdWithAccount(
+    studentId: string,
     userId: string,
     classroomId: string
   ): Promise<IUser> {
@@ -131,14 +131,14 @@ class UserService {
     for (let i = 0; i < classroom.participants_id.length; i++ ) {
       const userInClass = await this.userSchema.findById(classroom.participants_id[i]).exec();
       if (userInClass) {
-        for (let i = 0; i < userInClass.list_object_mssv.length; i++) {
-          let objectMssv = userInClass.list_object_mssv[0];
+        for (let i = 0; i < userInClass.list_object_studentId.length; i++) {
+          let ObjectStudentId = userInClass.list_object_studentId[0];
         
-          let classInArray = objectMssv.classroomId;
-          let mssvInArray = objectMssv.mssv;
+          let classInArray = ObjectStudentId.classroomId;
+          let studentIdInArray = ObjectStudentId.studentId;
           if (
             classInArray == classroomId &&
-            mssvInArray == mssv
+            studentIdInArray == studentId
           ) {
             throw new HttpException(409, "Mssv already exist in classroom");
           }
@@ -150,15 +150,15 @@ class UserService {
       throw new HttpException(400, `User is teacher`);
     }
 
-    let list_object_mssv_temp = user.list_object_mssv;
-    list_object_mssv_temp.push({
+    let list_object_studentId_temp = user.list_object_studentId;
+    list_object_studentId_temp.push({
       classroomId: classroomId,
-      mssv: mssv
+      studentId: studentId
     });
 
     const updateUserById = await this.userSchema
       .findByIdAndUpdate(userId, {
-        list_object_mssv: list_object_mssv_temp,
+        list_object_studentId: list_object_studentId_temp,
       },
       {new: true}
       )
