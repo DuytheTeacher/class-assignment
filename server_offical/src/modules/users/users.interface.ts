@@ -7,16 +7,16 @@ interface IUser {
     password: string;
     user_type: number;
     reg_type: number;
-    list_object_mssv: ObjectMssv[];
+    list_object_studentId: ObjectStudentId[];
     class_list_id: Array<typeof ObjectId>;
     avatar: string;
     create_at: Date;
     update_at: Date;
 }
 
-interface ObjectMssv {
+interface ObjectStudentId {
     classroomId: string,
-    mssv: string,
+    studentId: string,
 }
 
-export {IUser, ObjectMssv}
+export {IUser, ObjectStudentId}

@@ -1,6 +1,7 @@
 import { Route } from '@core/interfaces';
 import { authMiddleware } from '@core/middleware';
 import validationMiddleware from '@core/middleware/validation.middleware';
+import { uploadFileMiddleware } from '@core/middleware';
 import { Router } from 'express';
 import ClassroomsController from './classrooms.controller';
 import CreateDto from './dtos/create.dto';
@@ -63,5 +64,12 @@ export default class ClassroomsRoute implements Route {
       authMiddleware,
       this.classroomsController.sendClassroomInvitationLink
     );
+
+    this.router.post(
+      `${this.path}/upload_file_list_students`,
+      authMiddleware,
+      uploadFileMiddleware.single("file"),
+      this.classroomsController.uploadListStudents
+    )
   }
 }

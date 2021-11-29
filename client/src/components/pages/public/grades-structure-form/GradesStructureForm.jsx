@@ -3,86 +3,117 @@ import { FieldArray, Form, Formik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import * as Yup from 'yup';
 import styles from './GradesStructureForm.module.scss';
-import { sortableContainer, sortableElement } from 'react-sortable-hoc';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 // UI Components
 import TextField from '@mui/material/TextField';
 // Services
 import ClassroomService from '../../../../services/classroom.service';
 import { Grid } from '@mui/material';
 
-const SortableItem = sortableElement(
-  ({ gradeTouched, gradeErrors, i, handleChange, handleBlur, grade }) => {
-    return (
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
-          <TextField
-            autoFocus={i === 0}
-            fullWidth
-            error={gradeTouched.name && gradeErrors.name ? true : false}
-            helperText={gradeTouched.name && (gradeErrors.name || '')}
-            margin="dense"
-            id="name"
-            label="Grade name (*)"
-            type="text"
-            variant="outlined"
-            name={`gradesList.${i}.name`}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={grade.name}
-          />
+const SortableItem = ({
+  gradeTouched,
+  gradeErrors,
+  i,
+  handleChange,
+  handleBlur,
+  grade,
+}) => {
+  return (
+    <Draggable key={i} draggableId={`draggable-${i}`} index={i}>
+      {(provided, snapshot) => (
+        <Grid
+          container
+          spacing={2}
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+        >
+          <Grid item xs={6}>
+            <TextField
+              autoFocus={i === 0}
+              fullWidth
+              error={gradeTouched.name && gradeErrors.name ? true : false}
+              helperText={gradeTouched.name && (gradeErrors.name || '')}
+              margin="dense"
+              id="name"
+              label="Grade name (*)"
+              type="text"
+              variant="outlined"
+              name={`gradesList.${i}.name`}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={grade.name}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField
+              fullWidth
+              error={
+                gradeTouched.maxScore && gradeErrors.maxScore ? true : false
+              }
+              helperText={gradeTouched.maxScore && (gradeErrors.maxScore || '')}
+              margin="dense"
+              id="maxScore"
+              label="Score (*)"
+              type="number"
+              variant="outlined"
+              name={`gradesList.${i}.maxScore`}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              value={grade.maxScore}
+            />
+          </Grid>
         </Grid>
-        <Grid item xs={6}>
-          <TextField
-            fullWidth
-            error={gradeTouched.maxScore && gradeErrors.maxScore ? true : false}
-            helperText={gradeTouched.maxScore && (gradeErrors.maxScore || '')}
-            margin="dense"
-            id="maxScore"
-            label="Score (*)"
-            type="number"
-            variant="outlined"
-            name={`gradesList.${i}.maxScore`}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            value={grade.maxScore}
-          />
-        </Grid>
-      </Grid>
-    )
-  }
-);
+      )}
+    </Draggable>
+  );
+};
 
-const SortableContainer = sortableContainer(
-  ({ values, errors, touched, handleChange, handleBlur }) => {
-    return (
-      <Form className={styles.Form}>
-        <FieldArray name="gradesList">
-          {({ insert, remove, push }) =>
-          values.gradesList.map((grade, index) => {
-              const gradeErrors =
-                (errors.gradesList?.length && errors.gradesList[index]) || {};
-              const gradeTouched =
-                (touched.gradesList?.length && touched.gradesList[index]) || {};
-              return (
-                <div key={index}>
-                  <SortableItem
-                    gradeTouched={gradeTouched}
-                    gradeErrors={gradeErrors}
-                    i={index}
-                    index={index}
-                    handleChange={handleChange}
-                    handleBlur={handleBlur}
-                    grade={grade}
-                  />
-                </div>
-              );
-            })
-          }
-        </FieldArray>
-      </Form>
-    );
-  }
-);
+const FieldsArray = ({
+  values,
+  errors,
+  touched,
+  handleChange,
+  handleBlur,
+  gradesList,
+}) => {
+  return (
+    <Droppable droppableId="droppable">
+      {(provided, snapshot) => (
+        <div {...provided.droppableProps} ref={provided.innerRef}>
+          <Form className={styles.Form}>
+            <FieldArray name="gradesList">
+              {({ insert, remove, push }) =>
+                gradesList.map((grade, index) => {
+                  const gradeErrors =
+                    (errors.gradesList?.length && errors.gradesList[index]) ||
+                    {};
+                  const gradeTouched =
+                    (touched.gradesList?.length && touched.gradesList[index]) ||
+                    {};
+                  return (
+                    <div key={index}>
+                      <SortableItem
+                        gradeTouched={gradeTouched}
+                        gradeErrors={gradeErrors}
+                        i={index}
+                        index={index}
+                        handleChange={handleChange}
+                        handleBlur={handleBlur}
+                        grade={grade}
+                      />
+                    </div>
+                  );
+                })
+              }
+            </FieldArray>
+          </Form>
+          {provided.placeholder}
+        </div>
+      )}
+    </Droppable>
+  );
+};
 
 const GradesStructureForm = () => {
   const classID = window.location.pathname.split('/')[2];
@@ -92,7 +123,12 @@ const GradesStructureForm = () => {
   useEffect(() => {
     const getGradeStructure = async () => {
       const resp = await ClassroomService.getGradeStructure(classID);
-      setGradeList(resp);
+      resp.length
+        ? setGradeList(resp)
+        : setGradeList([
+            { name: 'Midterm', maxScore: 0, ordinal: 0 },
+            { name: 'Finalterm', maxScore: 0, ordinal: 1 },
+          ]);
     };
     getGradeStructure();
 
@@ -102,12 +138,7 @@ const GradesStructureForm = () => {
   }, [classID]);
 
   const initialValues = {
-    gradesList: gradesList.length
-      ? gradesList
-      : [
-          { name: 'Midterm', maxScore: 0, ordinal: 0 },
-          { name: 'Finalterm', maxScore: 0, ordinal: 1 },
-        ],
+    gradesList: gradesList,
   };
 
   const validationSchema = Yup.object().shape({
@@ -119,36 +150,54 @@ const GradesStructureForm = () => {
     ),
   });
 
+  const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
+
+  const onDragEnd = (result) => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const newGradeList = reorder(
+      gradesList,
+      result.source.index,
+      result.destination.index
+    );
+
+    setGradeList(newGradeList);
+  };
+
   const onSubmit = (fields) => {
     alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
   };
 
-  const onSortEnd = ({ oldIndex, newIndex }) => {
-    [initialValues.gradesList[oldIndex], initialValues.gradesList[newIndex]] = [initialValues.gradesList[newIndex], initialValues.gradesList[oldIndex]];
-    setGradeList(() => ({
-      gradesList: initialValues.gradesList,
-    }));
-  };
-
   return (
-    <Formik
-      initialValues={initialValues}
-      onSubmit={onSubmit}
-      validationSchema={validationSchema}
-    >
-      {({ errors, values, touched, setValues, handleChange, handleBlur }) => {
-        return (
-          <SortableContainer
-            errors={errors}
-            values={values}
-            touched={touched}
-            handleChange={handleChange}
-            handleBlur={handleBlur}
-            onSortEnd={onSortEnd}
-          />
-        );
-      }}
-    </Formik>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={onSubmit}
+        validationSchema={validationSchema}
+      >
+        {({ errors, values, touched, setValues, handleChange, handleBlur }) => {
+          return (
+            <FieldsArray
+              errors={errors}
+              values={values}
+              touched={touched}
+              handleChange={handleChange}
+              handleBlur={handleBlur}
+              gradesList={gradesList}
+            />
+          );
+        }}
+      </Formik>
+    </DragDropContext>
   );
 };
 

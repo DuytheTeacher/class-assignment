@@ -8,7 +8,6 @@ import cors from "cors";
 import helmet from "helmet";
 import { errorMiddleware } from "@core/middleware";
 
-
 class App {
   public app: express.Application;
   public port: string | number;
@@ -18,7 +17,7 @@ class App {
     this.app = express();
     this.port = process.env.PORT || 5000;
     this.production = process.env.NODE_ENV == "production" ? true : false;
-
+    
     
     this.connectToDatabase();
     this.initializeMiddleware();
