@@ -2415,7 +2415,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTRhNjcwY2IyNmRkNzFjNDg1NzU5ZiIsImlhdCI6MTYzNzEzMTg4OCwiZXhwIjoxNjM3MTM1NDg4fQ.AunlGAK2Q_SEI8-7EyhDF066My_WKSz7xLkJLe67vog[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
-<<<<<<< HEAD
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
@@ -2602,8 +2601,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
-=======
->>>>>>> f833f72debe2a82854401d80813a6ae5ce92be29
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m

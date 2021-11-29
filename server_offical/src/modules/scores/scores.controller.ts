@@ -4,6 +4,7 @@ import CreateScoresDto from './dtos/create.dto';
 import UpdateScoresDto from './dtos/update.dto';
 import ScoreService from './scores.service';
 import ScoreInterface from './scores.interface';
+import { Workbook } from 'exceljs';
 
 export default class ScoresController {
   private scoreService = new ScoreService();
@@ -77,6 +78,31 @@ export default class ScoresController {
         );
       const resp = new BodyResponse('Success', scores);
       res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public downloadFileTemplateListScoresOfStudents = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const classId = req.query.classId;
+      const excel: Workbook = await this.scoreService.downloadFileTemplateListScoresOfStudents(classId as string);
+      res.setHeader(
+        "Content-Type",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      );
+      res.setHeader(
+        "Content-Disposition",
+        "attachment; filename=" + "listscoresofstudents.xlsx"
+      );
+
+      excel.xlsx.write(res).then(function () {
+        res.status(200).end();
+      });
     } catch (error) {
       next(error);
     }

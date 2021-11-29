@@ -8,6 +8,7 @@ import { ObjectStudentId, UserSchema } from '@modules/users';
 import { ClassroomSchema } from '@modules/classrooms';
 import GradeStructureSchema from '@modules/grade_structure/grade_structure.model';
 import readXlsxFile from "read-excel-file/node";
+import excel, { Workbook } from "exceljs";
 
 class ScoreService {
   public scoreSchema = ScoreSchema;
@@ -203,6 +204,43 @@ class ScoreService {
     })
 
     throw Error(`Fail to import data into database!`);
+  }
+
+  public async downloadFileTemplateListScoresOfStudents(
+    classId: string,
+  ): Promise < Workbook > {
+    // const listGradesOfStudents = [];
+
+    const listGrades = await GradeStructureSchema.find({classroom: classId}).sort({ordinal: 1});
+    let structGrades: {[k: string]: any} = {
+      studentId: "18127076"
+    };
+    let liststructColWorksheet = [{ header: "studentId", key: "studentId", width: 10 }];
+    listGrades.forEach((grades) => {
+      structGrades[grades.name] = 100;
+
+      const structColWorksheet = {
+        header: grades.name,
+        key: grades.name,
+        width: 20
+      }
+
+      liststructColWorksheet.push(structColWorksheet);
+    });
+
+    let workbook: Workbook = new excel.Workbook();
+    let worksheet = workbook.addWorksheet("ListStudents");
+
+    // worksheet.columns = [
+    //   { header: "studentId", key: "studentId", width: 10 },
+    //   { header: "fullName", key: "fullName", width: 30 },
+    // ];
+    worksheet.columns = liststructColWorksheet;
+
+    // Add Array Rows
+    worksheet.addRows([structGrades]);
+
+    return workbook;
   }
 }
 

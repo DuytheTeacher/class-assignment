@@ -18,7 +18,7 @@ import {
 import nodemailer from "nodemailer";
 import CryptoJS from "crypto-js";
 import readXlsxFile from "read-excel-file/node";
-
+import excel, { Workbook } from "exceljs";
 class ClassroomService {
   public classroomSchema = ClassroomSchema;
 
@@ -291,6 +291,36 @@ class ClassroomService {
     })
 
     return `Uploaded the file successfully: ${file.originalname}`;
+  }
+
+  public async downloadFileTemplateListStudents(): Promise < Workbook > {
+    const listStudents = [
+      {
+        studentId: "18127076",
+        fullName: "Lê Tiến Đạt"
+      },
+      {
+        studentId: "18127090",
+        fullName: "Nguyễn Anh Duy"
+      },
+      {
+        studentId: "18127091",
+        fullName: "Lê Minh Thành"
+      },
+    ];
+
+    let workbook: Workbook = new excel.Workbook();
+    let worksheet = workbook.addWorksheet("ListStudents");
+
+    worksheet.columns = [
+      { header: "studentId", key: "studentId", width: 10 },
+      { header: "fullName", key: "fullName", width: 30 },
+    ];
+
+    // Add Array Rows
+    worksheet.addRows(listStudents);
+
+    return workbook;
   }
 }
 export default ClassroomService;

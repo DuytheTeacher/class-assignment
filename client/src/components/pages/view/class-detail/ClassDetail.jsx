@@ -79,10 +79,10 @@ const ClassDetail = () => {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <ClassNews classDetail={classDetail} />
+        {classDetail && <ClassNews classDetail={classDetail} />}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Table participants={participants}/>
+        {classDetail && <Table participants={participants}/>}
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three

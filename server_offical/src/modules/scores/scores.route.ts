@@ -49,5 +49,10 @@ export default class ClassroomsRoute implements Route {
       uploadFileMiddleware.single("file"),
       this.scoresController.uploadScoresOfListStudents
     )
+
+    this.router.get(
+      `${this.path}/download_file_template_list_scores_of_students`,
+      this.scoresController.downloadFileTemplateListScoresOfStudents
+    )
   }
 }
