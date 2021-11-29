@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import Classroom from './classrooms.interface';
+import {Classroom} from './classrooms.interface';
 
 const { ObjectId } = require('mongoose').Types;
 
@@ -29,6 +29,12 @@ const ClassroomSchema = new mongoose.Schema({
     {
       type: ObjectId,
       ref: 'user',
+    },
+  ],
+  list_students_from_xlsx: [
+    {
+      student_id: { type: String, required: true },
+      full_name: { type: String, required: true },
     },
   ],
   createTime: {
