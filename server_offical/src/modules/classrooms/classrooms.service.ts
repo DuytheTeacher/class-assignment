@@ -17,7 +17,7 @@ import {
 } from "@modules/users/";
 import nodemailer from "nodemailer";
 import CryptoJS from "crypto-js";
-const readXlsxFile = require("read-excel-file/node");
+import readXlsxFile from "read-excel-file/node";
 
 class ClassroomService {
   public classroomSchema = ClassroomSchema;

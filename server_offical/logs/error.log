@@ -334,3 +334,5 @@
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'id' of undefined[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: ENOENT: no such file or directory, open 'C:\Users\letye\Desktop\class-assignment\server_offical\src\core\middleware\upload.middleware.ts\1638081442045-bezkoder-listStudents.xlsx'[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA3OTkxNSwiZXhwIjoxNjM4MDgzNTE1fQ.B-YCjR-uXigO3yvhkaL_4mdX5QeK3tcUIsgk8KOAKXI[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODAxNzU0NCwiZXhwIjoxNjM4MDIxMTQ0fQ.49dgDa1HEkaz833YbhfVkGl7vF79HdG8cNdgEFDNOqE[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m

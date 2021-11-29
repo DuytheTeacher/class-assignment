@@ -30,6 +30,8 @@ class GradeStructureService {
     if (user.user_type === 0) {
       throw new HttpException(400, `User is student `);
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
       const gradestructure = await this.gradeStructureSchema.findOne({
@@ -38,6 +40,7 @@ class GradeStructureService {
         classroom: classId
       }).exec();
       if (gradestructure) {
+        count++;
         continue;
       }
       const createGradeStructure: GradeStructureInterface =
@@ -48,6 +51,11 @@ class GradeStructureService {
         });
       gradesStructures.push(createGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Data already exist`);
+    }
+
     return gradesStructures;
   }
 
@@ -80,6 +88,8 @@ class GradeStructureService {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
       const updateGradeStructure = await this.gradeStructureSchema.findOneAndUpdate(
@@ -104,10 +114,16 @@ class GradeStructureService {
       );
 
       if (!updateGradeStructure) {
+        count++;
         continue;
       }
       gradesStructures.push(updateGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Error when update`);
+    }
+
     return gradesStructures;
   }
 
@@ -119,6 +135,8 @@ class GradeStructureService {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
       const updateGradeStructure = await this.gradeStructureSchema.findOneAndDelete({
@@ -128,10 +146,16 @@ class GradeStructureService {
         classroom: classId,
       });
       if (!updateGradeStructure) {
+        count++;
         continue;
       }
       gradesStructures.push(updateGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Error when delete`);
+    }
+
     return gradesStructures;
   }
 }
