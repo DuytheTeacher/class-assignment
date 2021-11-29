@@ -2,7 +2,7 @@ import {
   Route
 } from '@core/interfaces';
 import {
-  authMiddleware
+  authMiddleware, uploadFileMiddleware
 } from '@core/middleware';
 import validationMiddleware from '@core/middleware/validation.middleware';
 import {
@@ -42,5 +42,12 @@ export default class ClassroomsRoute implements Route {
       authMiddleware,
       this.scoresController.listScoresByStudentId
     );
+
+    this.router.post(
+      `${this.path}/upload_file_list_scores_of_students`,
+      authMiddleware,
+      uploadFileMiddleware.single("file"),
+      this.scoresController.uploadScoresOfListStudents
+    )
   }
 }

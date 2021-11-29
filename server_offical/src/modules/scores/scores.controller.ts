@@ -14,10 +14,10 @@ export default class ScoresController {
       const classId = req.body.classId;
       const model: Array<CreateScoresDto> =
         req.body.createScores;
-      const score: Array<ScoreInterface> =
+      const scores: Array<ScoreInterface> =
         await this.scoreService.create(userId, classId, model);
 
-      const resp = new BodyResponse('Success', score);
+      const resp = new BodyResponse('Success', scores);
       res.status(201).json(resp);
     } catch (error) {
       next(error);
@@ -53,6 +53,28 @@ export default class ScoresController {
         req.body.updateGradesStructure;
       const scores: Array<ScoreInterface> =
         await this.scoreService.update(model);
+      const resp = new BodyResponse('Success', scores);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public uploadScoresOfListStudents = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userId = req.user.id;
+      const classId = req.body.classId;
+      const file = req.file;
+      const scores: Array<ScoreInterface> =
+        await this.scoreService.uploadScoresOfListStudents(
+          userId,
+          classId,
+          file
+        );
       const resp = new BodyResponse('Success', scores);
       res.status(200).json(resp);
     } catch (error) {
