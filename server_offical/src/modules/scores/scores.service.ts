@@ -146,7 +146,7 @@ class ScoreService {
 
     let path = global.__filename + file.filename;
     path = path.replace("..", "");
-    path = path.replace("\src", "/uploads");
+    path = path.replace("/src", "/uploads");
 
     const listGradesStructure = await GradeStructureSchema.find({classroom: classId}).sort({ordinal: 1});
 

@@ -259,7 +259,7 @@ class ClassroomService {
 
     let path = global.__filename + file.filename;
     path = path.replace("..", "");
-    path = path.replace("\src", "/uploads");
+    path = path.replace("/src", "/uploads");
 
     readXlsxFile(path).then((rows: any) => {
       // skip header

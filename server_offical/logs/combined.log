@@ -2855,3 +2855,6 @@
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
