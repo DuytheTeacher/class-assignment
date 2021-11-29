@@ -48,13 +48,13 @@ const UserSchema = new mongoose.Schema({
   reg_type: {
     type: Number,
   },
-  list_object_mssv: [
+  list_object_studentId: [
     {
       classroomId: {
         type: String,
         required: true,
       },
-      mssv: {
+      studentId: {
         type: String,
         required: true,
       },

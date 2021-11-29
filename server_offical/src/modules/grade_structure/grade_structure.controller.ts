@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import BodyRespone from '@core/response_default';
+import BodyResponse from '@core/response_default';
 import CreateGradeStructureInterface from './dtos/createGradeStructure';
 import GradeStructureService from './grade_structure.service';
 import GradeStructureInterface from './grade_structure.interface';
@@ -17,7 +17,7 @@ export default class GradeStructureController {
       const gradesStructures: Array<GradeStructureInterface> =
         await this.gradeStructureService.create(userId, model, classId);
 
-      const resp = new BodyRespone('Success', gradesStructures);
+      const resp = new BodyResponse('Success', gradesStructures);
       res.status(201).json(resp);
     } catch (error) {
       next(error);
@@ -35,7 +35,7 @@ export default class GradeStructureController {
       const listGradeStructure: Array<GradeStructureInterface> =
         await this.gradeStructureService.listGrades(userId, classId as string);
 
-      const resp = new BodyRespone('Success', listGradeStructure);
+      const resp = new BodyResponse('Success', listGradeStructure);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -54,7 +54,7 @@ export default class GradeStructureController {
         req.body.updateGradesStructure;
       const gradestructure: Array<GradeStructureInterface> =
         await this.gradeStructureService.update(userId, model, classId);
-      const resp = new BodyRespone('Success', gradestructure);
+      const resp = new BodyResponse('Success', gradestructure);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -72,7 +72,7 @@ export default class GradeStructureController {
         req.body.deleteGradesStructure;
       const gradestructure: Array<GradeStructureInterface> =
         await this.gradeStructureService.delete(userId, model, classId);
-      const resp = new BodyRespone('Success', gradestructure);
+      const resp = new BodyResponse('Success', gradestructure);
       res.status(200).json(resp);
     } catch (error) {
       next(error);

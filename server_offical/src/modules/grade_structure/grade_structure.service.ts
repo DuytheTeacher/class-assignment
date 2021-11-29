@@ -1,14 +1,16 @@
 import { isEmptyObject } from '@core/utils';
 import { HttpException } from '@core/exception';
-import GradeSchema from './grade_structure.model';
+import GradeStructureSchema from './grade_structure.model';
 import UpdateGradeStructureInterface from './dtos/updateGradeStructure';
 import CreateGradeStructureInterface from './dtos/createGradeStructure';
 import GradeStructureInterface from './grade_structure.interface';
 import { UserSchema } from '@modules/users';
 import { ClassroomSchema } from '@modules/classrooms';
 import { _UpdateQuery } from 'mongoose';
+import ScoreSchema from '@modules/scores/scores.model'
+
 class GradeStructureService {
-  public GradeSchema = GradeSchema;
+  public gradeStructureSchema = GradeStructureSchema;
 
   public async create(
     userId: string,
@@ -19,7 +21,6 @@ class GradeStructureService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    // const userService = new UserService();
     const user = await UserSchema.findById(userId).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
@@ -29,25 +30,32 @@ class GradeStructureService {
     if (user.user_type === 0) {
       throw new HttpException(400, `User is student `);
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
-      const gradestructure = await this.GradeSchema.findOne({
+      const gradestructure = await this.gradeStructureSchema.findOne({
         name: model[i].name,
+        auth: userId,
+        classroom: classId
       }).exec();
       if (gradestructure) {
-        throw new HttpException(
-          409,
-          `GradeStructure name ${model[i].name} already exist`
-        );
+        count++;
+        continue;
       }
       const createGradeStructure: GradeStructureInterface =
-        await this.GradeSchema.create({
+        await this.gradeStructureSchema.create({
           ...model[i],
           auth: userId,
           classroom: classId,
         });
       gradesStructures.push(createGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Data already exist`);
+    }
+
     return gradesStructures;
   }
 
@@ -64,7 +72,7 @@ class GradeStructureService {
     if (user.user_type === 0) {
       throw new HttpException(400, `User is student `);
     }
-    const listGrades = <any>await this.GradeSchema.find({classroom: classId}).sort({ordinal: 1});
+    const listGrades = <any>await this.gradeStructureSchema.find({classroom: classId}).sort({ordinal: 1});
 
     if (!listGrades) {
       throw new HttpException(409, `Grades is not exist`);
@@ -80,9 +88,11 @@ class GradeStructureService {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
-      const updateGradeStructure = await this.GradeSchema.findOneAndUpdate(
+      const updateGradeStructure = await this.gradeStructureSchema.findOneAndUpdate(
         {
           _id: model[i]._id,
           auth: userId,
@@ -91,14 +101,29 @@ class GradeStructureService {
         { ...model[i] },
         { new: true }
       );
+
+      //update tabe scores
+      const updateScores = await ScoreSchema.updateMany(
+        {
+          gradesStructId: model[i]._id,
+        },
+        { name: model[i].name,
+          ordinal: model[i].ordinal
+        },
+        { new: true }
+      );
+
       if (!updateGradeStructure) {
-        throw new HttpException(
-          409,
-          `GradeStructure name ${model[i].name} already exist ,  not permission or can not found GradeStructure in Classroom `
-        );
+        count++;
+        continue;
       }
       gradesStructures.push(updateGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Error when update`);
+    }
+
     return gradesStructures;
   }
 
@@ -110,22 +135,27 @@ class GradeStructureService {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
+
+    let count = 0;
     let gradesStructures = [];
     for (let i = 0; i < model.length; i++) {
-      const updateGradeStructure = await this.GradeSchema.findOneAndDelete({
+      const updateGradeStructure = await this.gradeStructureSchema.findOneAndDelete({
         _id: model[i]._id,
         name: model[i].name,
         auth: userId,
         classroom: classId,
       });
       if (!updateGradeStructure) {
-        throw new HttpException(
-          409,
-          `GradeStructure name ${model[i].name} already exist ,  not permission or can not found GradeStructure in Classroom `
-        );
+        count++;
+        continue;
       }
       gradesStructures.push(updateGradeStructure);
     }
+
+    if (count == model.length) {
+      throw new HttpException(400, `Error when delete`);
+    }
+
     return gradesStructures;
   }
 }

@@ -6,7 +6,6 @@ const GradeStructureSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
       minlength: 3,
       maxlength: 50,
     },
@@ -34,6 +33,6 @@ const GradeStructureSchema = new mongoose.Schema(
 
 const GradeStructure = mongoose.model<
   GradeStructureInterface & mongoose.Document
->('gradestructure', GradeStructureSchema);
+>('gradeStructure', GradeStructureSchema);
 
 export default GradeStructure;

@@ -1,9 +1,9 @@
 import { IUser } from '@modules/users';
 import { NextFunction, Request, Response } from 'express';
-import BodyRespone from '@core/response_default';
+import BodyResponse from '@core/response_default';
 import CreateDto from './dtos/create.dto';
 import ClassroomService from './classrooms.service';
-import Classroom from './classrooms.interface';
+import { Classroom } from './classrooms.interface';
 
 export default class ClassroomsController {
   private classroomService = new ClassroomService();
@@ -17,7 +17,7 @@ export default class ClassroomsController {
         model
       );
 
-      const resp = new BodyRespone('Success', classroom);
+      const resp = new BodyResponse('Success', classroom);
       res.status(201).json(resp);
     } catch (error) {
       next(error);
@@ -35,7 +35,7 @@ export default class ClassroomsController {
         classId as string
       );
 
-      const resp = new BodyRespone('Success', classroom);
+      const resp = new BodyResponse('Success', classroom);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -51,7 +51,7 @@ export default class ClassroomsController {
       const classId = req.query.id;
       const classroom: Array<IUser> =
         await this.classroomService.listUserInClassroom(classId as string);
-      const resp = new BodyRespone('Success', classroom);
+      const resp = new BodyResponse('Success', classroom);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -67,7 +67,7 @@ export default class ClassroomsController {
       const userId = req.user.id;
       const classroom: Array<Classroom> =
         await this.classroomService.listClassroomByUserId(userId as string);
-      const resp = new BodyRespone('Success', classroom);
+      const resp = new BodyResponse('Success', classroom);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -83,7 +83,7 @@ export default class ClassroomsController {
       const listClassroom: Array<Classroom> =
         await this.classroomService.listClassroom();
 
-      const resp = new BodyRespone('Success', listClassroom);
+      const resp = new BodyResponse('Success', listClassroom);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -103,7 +103,7 @@ export default class ClassroomsController {
         userId as string,
       );
 
-      const resp = new BodyRespone('Success', classroom);
+      const resp = new BodyResponse('Success', classroom);
       res.status(200).json(resp);
     } catch (error) {
       next(error);
@@ -116,7 +116,7 @@ export default class ClassroomsController {
     next: NextFunction
   ) => {
     try {
-      const userId = req.body.id_receiver;
+      const userId = req.body.idReceiver;
       const classId = req.body.classId;
       const invitationLink: string =
         await this.classroomService.createClassroomInvitationLink(
@@ -124,7 +124,7 @@ export default class ClassroomsController {
           userId
         );
 
-      const resp = new BodyRespone('Success', {
+      const resp = new BodyResponse('Success', {
         invitationLink: invitationLink,
       });
       res.status(200).json(resp);
@@ -149,7 +149,29 @@ export default class ClassroomsController {
           link
         );
 
-      const resp = new BodyRespone('Success', {});
+      const resp = new BodyResponse('Success', {});
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public uploadListStudents = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userId = req.user.id;
+      const classId = req.body.classId;
+      const file = req.file;
+      const notification: string =
+        await this.classroomService.uploadListStudents(
+          file,
+          classId
+        );
+
+      const resp = new BodyResponse('Success', {notification: notification});
       res.status(200).json(resp);
     } catch (error) {
       next(error);
