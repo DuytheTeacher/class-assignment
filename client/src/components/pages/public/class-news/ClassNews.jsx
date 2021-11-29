@@ -10,6 +10,8 @@ import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button'
+import { GradesStructure } from '..';
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -22,6 +24,7 @@ const ClassNews = (props) => {
   const { classDetail } = props;
 
   const [anchorEl, setAnchorEl] = useState(null);
+  const [isOpenDialog, setIsOpenDialog] = useState(false);
 
   const open = Boolean(anchorEl);
 
@@ -31,6 +34,10 @@ const ClassNews = (props) => {
 
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const notifyOpenDialog = (value) => {
+    setIsOpenDialog(value);
   };
 
   return (
@@ -52,7 +59,7 @@ const ClassNews = (props) => {
             >
               <div className={styles.InvitationTop}>
                 <span className={styles.InvitationText}>Class code</span>
-                <span>{classDetail._id.substring(0, 6)}</span>
+                <span>{classDetail._id?.substr(0, 6)}</span>
                 <IconButton
                   aria-label="more"
                   id="long-button"
@@ -86,24 +93,13 @@ const ClassNews = (props) => {
             <Box sx={{ boxShadow: 3, borderRadius: 1 }}>xs=4</Box>
           </Grid>
           <Grid item xs={4}>
-            {/* <Box
+            <Box
               sx={{ boxShadow: 3, borderRadius: 1 }}
               className={styles.GradeStuctureBox}
             >
               <span className={styles.GradeTitleText}>Grades Structure</span>
-              <Menu
-                id="grades-menu"
-                anchorEl={anchorEl}
-                open={open}
-                onClose={handleClose}
-                MenuListProps={{
-                  'aria-labelledby': 'basic-button',
-                }}
-              >
-                <MenuItem onClick={handleClose}>Re-GenerateCode</MenuItem>
-                <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
-              </Menu>
+              <Button variant="text" className={styles.EditButton} onClick={() => notifyOpenDialog(true)}>Edit</Button>
+              <GradesStructure notifyOpenDialog={notifyOpenDialog} isOpenDialog={isOpenDialog} />
               <Grid
                 container
                 rowSpacing={1}
@@ -122,7 +118,7 @@ const ClassNews = (props) => {
                   <Item>4</Item>
                 </Grid>
               </Grid>
-            </Box> */}
+            </Box>
           </Grid>
           <Grid item xs={8}>
             <Box sx={{ boxShadow: 3, borderRadius: 1 }}>xs=8</Box>

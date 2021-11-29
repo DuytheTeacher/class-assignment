@@ -49,11 +49,21 @@ const getListParticipants = async (classID) => {
   }
 };
 
+const getGradeStructure = async (classID) => {
+  try {
+    const resp = await api.get(`/gradestructure/get/?classId=${classID}`);
+    return resp.data.payload;
+  } catch (error) {
+    throw error.message;
+  }
+};
+
 const exportedObject = {
   getListClassrooms,
   createClass,
   getClassDetail,
-  getListParticipants
+  getListParticipants,
+  getGradeStructure
 };
 
 export default exportedObject;
