@@ -1,14 +1,15 @@
 // Librabries
-import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import AppBar from '@mui/material/AppBar';
 // UI Components
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import React from 'react';
+// Components
 import { GradesStructureForm } from '..';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -17,6 +18,16 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FullScreenDialog = (props) => {
   const { notifyOpenDialog, isOpenDialog } = props;
+  let submitFormGradesList;
+
+  const bindFormSubmit = (formSubmit) => {
+    submitFormGradesList = formSubmit;
+  };
+
+  const onSubmitGradesList = async () => {
+    submitFormGradesList();
+    notifyOpenDialog(false);
+  };
 
   return (
     <div>
@@ -39,16 +50,12 @@ const FullScreenDialog = (props) => {
             <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
               Grades Structure
             </Typography>
-            <Button
-              autoFocus
-              color="inherit"
-              onClick={() => notifyOpenDialog(false)}
-            >
+            <Button autoFocus color="inherit" onClick={onSubmitGradesList}>
               save
             </Button>
           </Toolbar>
         </AppBar>
-        <GradesStructureForm />
+        <GradesStructureForm bindFormSubmit={bindFormSubmit} />
       </Dialog>
     </div>
   );

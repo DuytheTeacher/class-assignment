@@ -1,17 +1,22 @@
-import styles from './ClassNews.module.scss';
-import { useState } from 'react';
-
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 // UI Components
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button'
+import { styled } from '@mui/material/styles';
+import { connect } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { GradesStructure } from '..';
+// Services
+import ClassroomService from 'services/classroom.service';
+import styles from './ClassNews.module.scss';
+// Store
+import { setGradesList } from 'store/actions';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -21,10 +26,20 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const ClassNews = (props) => {
-  const { classDetail } = props;
+  const { classDetail, gradesList, setGradesList } = props;
+  const classID = window.location.pathname.split('/')[2];
 
   const [anchorEl, setAnchorEl] = useState(null);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
+
+  useEffect(() => {
+    const getGradeStructure = async () => {
+      const resp = await ClassroomService.getGradeStructure(classID);
+      if (resp.length)
+        setGradesList(resp);
+    };
+    getGradeStructure();
+  }, [classID]);
 
   const open = Boolean(anchorEl);
 
@@ -105,18 +120,18 @@ const ClassNews = (props) => {
                 rowSpacing={1}
                 columnSpacing={{ xs: 1, sm: 2, md: 3 }}
               >
-                <Grid item xs={6}>
-                  <Item>Graden name</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>2</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>Grade name</Item>
-                </Grid>
-                <Grid item xs={6}>
-                  <Item>4</Item>
-                </Grid>
+                {gradesList.map((grade) => {
+                  return (
+                    <>
+                      <Grid item xs={6}>
+                        <Item>{grade.name}</Item>
+                      </Grid>
+                      <Grid item xs={6}>
+                        <Item>{grade.maxScore}</Item>
+                      </Grid>
+                    </>
+                  );
+                })}
               </Grid>
             </Box>
           </Grid>
@@ -129,4 +144,12 @@ const ClassNews = (props) => {
   );
 };
 
-export default ClassNews;
+const mapStateToProps = (state) => ({
+  gradesList: state.class.gradesList
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setGradesList: (gradesList) => dispatch(setGradesList(gradesList))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ClassNews);

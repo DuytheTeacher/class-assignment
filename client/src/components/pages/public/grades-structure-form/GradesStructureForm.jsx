@@ -1,14 +1,21 @@
 // Librabries
-import { FieldArray, Form, Formik } from 'formik';
-import React, { useEffect, useState } from 'react';
-import * as Yup from 'yup';
-import styles from './GradesStructureForm.module.scss';
-import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+import { Grid } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 // UI Components
 import TextField from '@mui/material/TextField';
+import { FieldArray, Form, Formik } from 'formik';
+import React, { useState } from 'react';
+import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { connect } from 'react-redux';
+// Store
+import { setGradesList } from 'store/actions';
+import * as Yup from 'yup';
+import styles from './GradesStructureForm.module.scss';
 // Services
-import ClassroomService from '../../../../services/classroom.service';
-import { Grid } from '@mui/material';
+import ClassroomService from 'services/classroom.service';
 
 const SortableItem = ({
   gradeTouched,
@@ -17,20 +24,40 @@ const SortableItem = ({
   handleChange,
   handleBlur,
   grade,
+  remove,
+  push,
+  values
 }) => {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleRemove = () => {
+    remove(i);
+    // setTempList(tempList.filter((item, index) => index !== i))
+    handleClose();
+  };
+  const handlePush = () => {
+    push({ name: 'Midterm', maxScore: 0, ordinal: 0 });
+    // setTempList([...tempList, { name: 'Midterm', maxScore: 0, ordinal: 0 }])
+    handleClose();
+  };
   return (
     <Draggable key={i} draggableId={`draggable-${i}`} index={i}>
-      {(provided, snapshot) => (
+      {(provided) => (
         <Grid
           container
-          spacing={2}
+          spacing={4}
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}
         >
           <Grid item xs={6}>
             <TextField
-              autoFocus={i === 0}
               fullWidth
               error={gradeTouched.name && gradeErrors.name ? true : false}
               helperText={gradeTouched.name && (gradeErrors.name || '')}
@@ -45,7 +72,7 @@ const SortableItem = ({
               value={grade.name}
             />
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={5}>
             <TextField
               fullWidth
               error={
@@ -63,6 +90,30 @@ const SortableItem = ({
               value={grade.maxScore}
             />
           </Grid>
+          <Grid item xs={1} className={styles.MenuIcon}>
+            <IconButton
+              aria-label="more"
+              id="long-button"
+              aria-controls="long-menu"
+              aria-expanded={open ? 'true' : undefined}
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              <MoreVertIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                'aria-labelledby': 'basic-button',
+              }}
+            >
+              <MenuItem onClick={handlePush}>Create a new Grade</MenuItem>
+              {values.gradesList.length > 1 && <MenuItem onClick={handleRemove}>Remove this Grade</MenuItem>}
+            </Menu>
+          </Grid>
         </Grid>
       )}
     </Draggable>
@@ -75,70 +126,80 @@ const FieldsArray = ({
   touched,
   handleChange,
   handleBlur,
-  gradesList,
+  handleSubmit,
 }) => {
+  const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+
+    return result;
+  };
+  const onDragEnd = (result) => {
+    // dropped outside the list
+    if (!result.destination) {
+      return;
+    }
+
+    const newGradeList = reorder(
+      values.gradesList,
+      result.source.index,
+      result.destination.index
+    );
+
+    values.gradesList = newGradeList;
+  };
   return (
-    <Droppable droppableId="droppable">
-      {(provided, snapshot) => (
-        <div {...provided.droppableProps} ref={provided.innerRef}>
-          <Form className={styles.Form}>
-            <FieldArray name="gradesList">
-              {({ insert, remove, push }) =>
-                gradesList.map((grade, index) => {
-                  const gradeErrors =
-                    (errors.gradesList?.length && errors.gradesList[index]) ||
-                    {};
-                  const gradeTouched =
-                    (touched.gradesList?.length && touched.gradesList[index]) ||
-                    {};
-                  return (
-                    <div key={index}>
-                      <SortableItem
-                        gradeTouched={gradeTouched}
-                        gradeErrors={gradeErrors}
-                        i={index}
-                        index={index}
-                        handleChange={handleChange}
-                        handleBlur={handleBlur}
-                        grade={grade}
-                      />
-                    </div>
-                  );
-                })
-              }
-            </FieldArray>
-          </Form>
-          {provided.placeholder}
-        </div>
-      )}
-    </Droppable>
+    <DragDropContext onDragEnd={onDragEnd}>
+      <Droppable droppableId="droppable">
+        {(provided) => (
+          <div {...provided.droppableProps} ref={provided.innerRef}>
+            <Form className={styles.Form} onSubmit={() => handleSubmit()}>
+              <FieldArray name="gradesList">
+                {(arrayHelpers) =>
+                  values.gradesList.map((grade, index) => {
+                    const gradeErrors =
+                      (errors.gradesList?.length && errors.gradesList[index]) ||
+                      {};
+                    const gradeTouched =
+                      (touched.gradesList?.length &&
+                        touched.gradesList[index]) ||
+                      {};
+                    return (
+                      <div key={index}>
+                        <SortableItem
+                          gradeTouched={gradeTouched}
+                          gradeErrors={gradeErrors}
+                          i={index}
+                          index={index}
+                          handleChange={handleChange}
+                          handleBlur={handleBlur}
+                          grade={grade}
+                          remove={arrayHelpers.remove}
+                          push={arrayHelpers.push}
+                          values={values}
+                        />
+                      </div>
+                    );
+                  })
+                }
+              </FieldArray>
+            </Form>
+            {provided.placeholder}
+          </div>
+        )}
+      </Droppable>
+    </DragDropContext>
   );
 };
 
-const GradesStructureForm = () => {
-  const classID = window.location.pathname.split('/')[2];
-
-  const [gradesList, setGradeList] = useState([]);
-
-  useEffect(() => {
-    const getGradeStructure = async () => {
-      const resp = await ClassroomService.getGradeStructure(classID);
-      resp.length
-        ? setGradeList(resp)
-        : setGradeList([
-            { name: 'Midterm', maxScore: 0, ordinal: 0 },
-            { name: 'Finalterm', maxScore: 0, ordinal: 1 },
-          ]);
-    };
-    getGradeStructure();
-
-    return () => {
-      setGradeList([{ name: '', maxScore: 0, ordinal: 0 }]);
-    };
-  }, [classID]);
+const GradesStructureForm = (props) => {
+  const { gradesList, bindFormSubmit } = props;
 
   const initialValues = {
-    gradesList: gradesList,
+    gradesList: gradesList.length ? gradesList : [
+      { name: 'Midterm', maxScore: 0, ordinal: 0 }
+    ],
   };
 
   const validationSchema = Yup.object().shape({
@@ -150,55 +211,62 @@ const GradesStructureForm = () => {
     ),
   });
 
-  const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
+  const onSubmit = async (fields) => {
+    const classID = window.location.pathname.split('/')[2];
+    const { setGradesList } = props;
+    const isUpdate = gradesList.length;
+    const reoderedGradesList = fields.gradesList.map((item, index) => ({
+      name: item.name,
+      maxScore: item.maxScore,
+      ordinal: index,
+      _id: isUpdate ? item._id : undefined
+    }));
 
-    return result;
-  };
-
-  const onDragEnd = (result) => {
-    // dropped outside the list
-    if (!result.destination) {
-      return;
-    }
-
-    const newGradeList = reorder(
-      gradesList,
-      result.source.index,
-      result.destination.index
-    );
-
-    setGradeList(newGradeList);
-  };
-
-  const onSubmit = (fields) => {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(fields, null, 4));
+    if (!isUpdate) await ClassroomService.createGradeStructure(classID, reoderedGradesList);
+    else await ClassroomService.updateGradeStructure(classID, reoderedGradesList);
+    setGradesList(fields.gradesList);
   };
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <Formik
-        initialValues={initialValues}
-        onSubmit={onSubmit}
-        validationSchema={validationSchema}
-      >
-        {({ errors, values, touched, setValues, handleChange, handleBlur }) => {
-          return (
-            <FieldsArray
-              errors={errors}
-              values={values}
-              touched={touched}
-              handleChange={handleChange}
-              handleBlur={handleBlur}
-              gradesList={gradesList}
-            />
-          );
-        }}
-      </Formik>
-    </DragDropContext>
+    <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      {({
+        errors,
+        values,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        submitForm,
+      }) => {
+        bindFormSubmit(submitForm);
+        return (
+          <FieldsArray
+            errors={errors}
+            values={values}
+            touched={touched}
+            handleChange={handleChange}
+            handleBlur={handleBlur}
+            handleSubmit={handleSubmit}
+          />
+        );
+      }}
+    </Formik>
   );
 };
 
-export default GradesStructureForm;
+const mapStateToProps = (state) => ({
+  gradesList: state.class.gradesList,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  setGradesList: (gradesList) => dispatch(setGradesList(gradesList)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GradesStructureForm);
