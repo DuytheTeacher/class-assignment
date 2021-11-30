@@ -223,7 +223,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTFhODVmZjQ2NGRjNmQ0YmEwZmI3OCIsImlhdCI6MTYzNzA4MzI2MSwiZXhwIjoxNjM3MDg2ODYxfQ.Fbi7enCdAV9Gu8Rlmuc6uEJwoboMXuToveLYkPw_RKk[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTNmNDJlOWI1NzA1YjBmNGIxMDg3OSIsImlhdCI6MTYzNzA4NjI1NSwiZXhwIjoxNjM3MDg5ODU1fQ.CZlmURIlhp-wr2qT1iKSRCPWV5A-qThNs7UubvAb1H0[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTRhNjcwY2IyNmRkNzFjNDg1NzU5ZiIsImlhdCI6MTYzNzEzMTg4OCwiZXhwIjoxNjM3MTM1NDg4fQ.AunlGAK2Q_SEI8-7EyhDF066My_WKSz7xLkJLe67vog[39m
-<<<<<<< HEAD
 [31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token } in JSON at position 102[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'length' of undefined[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'length' of undefined[39m
@@ -286,8 +285,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
-=======
->>>>>>> f833f72debe2a82854401d80813a6ae5ce92be29
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWRmNzZkOTcxMGRkZjRmYzhkNjRjZSIsImlhdCI6MTYzNzc0MjQ0NiwiZXhwIjoxNjM3NzQ2MDQ2fQ.wUcDRFsEGfxPW-2P-Xb7lcP6wYVb57rjwxIfz0XLX9Q[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i2222e2122ss21s22s2s2s22a2w222111ss11s1ss22snd1at is not exist[39m
 [31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i2222e2122ss21s22s2s2s22a2w222111ss11s1ss22snd1at is not exist[39m
@@ -337,9 +334,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODAxNzU0NCwiZXhwIjoxNjM4MDIxMTQ0fQ.49dgDa1HEkaz833YbhfVkGl7vF79HdG8cNdgEFDNOqE[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
-[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
-[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
-[31merror[39m: [31m[ERROR] - 500 - Msg: ENOENT: no such file or directory, open '/home/ssd_sata/React_HCMUS/nopbai/class-assignment/server_offical/uploads/1638247572958-bezkoder-listscoresofstudents (1).xlsx'[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
@@ -350,3 +344,49 @@
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODAyMTIzMiwiZXhwIjoxNjM4MDI0ODMyfQ.KvGu5yG2ekHugmh0cuetnJHp1XH7cYand7cArS0xKaA[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI0NzU2MiwiZXhwIjoxNjM4MjUxMTYyfQ.SFBt6A7yuiF3NvRfmykNIw8qhSb_IUr2ZovxfKzchyc[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Please upload an excel file![39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI0NzU2MiwiZXhwIjoxNjM4MjUxMTYyfQ.SFBt6A7yuiF3NvRfmykNIw8qhSb_IUr2ZovxfKzchyc[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "61a31db980cd9ab7a8a26c5f1" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI1NTIyMywiZXhwIjoxNjM4MjU4ODIzfQ.3BLaHcUC305IupHE2QAAIfnyxTnMv7ctwphYR_cGjVA[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "18127076" (type string) at path "_id" for model "classroom"[39m

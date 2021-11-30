@@ -130,7 +130,7 @@ class ScoreService {
     userId: string,
     classId: string,
     file: any,
-  ): Promise<Array<ScoreInterface>> {
+  ): Promise<string> {
     if (file == undefined) {
       throw new HttpException(409, `Please upload an excel file!`);
     }
@@ -147,63 +147,60 @@ class ScoreService {
 
     let path = global.__filename + file.filename;
     path = path.replace("..", "");
-    path = path.replace("/src", "/uploads");
+    path = path.replace("\src", "/uploads");
 
     const listGradesStructure = await GradeStructureSchema.find({classroom: classId}).sort({ordinal: 1});
 
     let count = 0;
     let countScoreExist = 0;
 
-    readXlsxFile(path).then((rows: any) => {
-      // skip header
-      rows.shift();
+    let rows = await readXlsxFile(path);
+    rows.shift();
+    let listStudents: any = [];
 
-      let listStudents: any = [];
-
-      rows.forEach((row: any) => {
-        let flag = 0;
-        this.scoreSchema.findOne({
-          studentId:row[0],
-          classId: classId,
-          gradesStructId: listGradesStructure[count]._id,
-        }).then(scoresTemp => {
-          if (scoresTemp) {
-            countScoreExist++;
-            flag = 1;
-          }
-        });
-       
-        if (flag == 0) {
-          let scores = {
-            name: listGradesStructure[count].name,
-            studentId: row[0],
-            classId: classId,
-            gradesStructureId: listGradesStructure[count]._id,
-            score: row[1],
-            ordinal: listGradesStructure[count].ordinal,
-            createAt: Date.now(),
-            updateAt: Date.now(),
-          };
-  
-          listStudents.push(scores);
-        }
-
-        count++;
-      });
-
-      if (countScoreExist == count) {
-        throw new HttpException(400, `Data already exist`);
+    for(let i = 0; i < rows.length; i++) {
+      const row: any = rows[i];
+     
+      let flag = 0;
+      let scores = await this.scoreSchema.findOne({
+        studentId: row[0],
+        classId: classId,
+        gradesStructId: listGradesStructure[count]._id,
+      })
+      
+      if (scores) {
+        countScoreExist++;
+        flag = 1;
       }
 
-      this.scoreSchema.create(
-        listStudents
-      ).then(createScore => {
-        if (!createScore) throw Error(`Fail to import data into database!`);
-        return createScore
-      });
-    })
+      if (flag == 0) {
+        let scores = {
+          name: listGradesStructure[count].name,
+          studentId: row[0],
+          classId: classId,
+          gradesStructId: listGradesStructure[count]._id.toHexString(),
+          score: row[1],
+          ordinal: listGradesStructure[count].ordinal,
+          createAt: Date.now(),
+          updateAt: Date.now(),
+        };
 
-    throw Error(`Fail to import data into database!`);
+        listStudents.push(scores);
+      }
+      count++;
+    }
+
+    if (countScoreExist == count) {
+      throw new HttpException(400, `Data already exist`);
+    }
+
+    const createScore = await this.scoreSchema.create(
+      listStudents
+    );
+
+    if (!createScore) throw Error(`Fail to import data into database!`)
+
+    return `Uploaded the file successfully: ${file.originalname}`;
   }
 
   public async downloadFileTemplateListScoresOfStudents(

@@ -2415,7 +2415,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOTRhNjcwY2IyNmRkNzFjNDg1NzU5ZiIsImlhdCI6MTYzNzEzMTg4OCwiZXhwIjoxNjM3MTM1NDg4fQ.AunlGAK2Q_SEI8-7EyhDF066My_WKSz7xLkJLe67vog[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
-<<<<<<< HEAD
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
@@ -2602,8 +2601,6 @@
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWJjODE4YzBjOTRmYTk4NDBmNGI1NiIsImlhdCI6MTYzNzU5OTI1NiwiZXhwIjoxNjM3NjAyODU2fQ.pwOBbrfSZAhq7PBn-E-HyBx9JyCM9W8ciHiFZgIperQ[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cannot convert undefined or null to object[39m
-=======
->>>>>>> f833f72debe2a82854401d80813a6ae5ce92be29
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
@@ -2857,44 +2854,11 @@
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTMxZGFiODBjZDlhYjdhOGEyNmM1OSIsImlhdCI6MTYzODA4MzYwOSwiZXhwIjoxNjM4MDg3MjA5fQ.H7OGovgg863U2lgUb6sGgDiijmSOGCiL9nyhf3mlpW4[39m
-[31merror[39m: [31m[ERROR] - 500 - Msg: ENOENT: no such file or directory, open '/home/ssd_sata/React_HCMUS/nopbai/class-assignment/server_offical/uploads/1638247572958-bezkoder-listscoresofstudents (1).xlsx'[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
-[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
-[32minfo[39m: [32mDatabase connected...[39m
-[32minfo[39m: [32mServer is listening on port 5000[39m
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
@@ -2917,3 +2881,211 @@
 [32minfo[39m: [32mDatabase connected...[39m
 [32minfo[39m: [32mServer is listening on port 5000[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODAyMTIzMiwiZXhwIjoxNjM4MDI0ODMyfQ.KvGu5yG2ekHugmh0cuetnJHp1XH7cYand7cArS0xKaA[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Fail to import data into database![39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI0NzU2MiwiZXhwIjoxNjM4MjUxMTYyfQ.SFBt6A7yuiF3NvRfmykNIw8qhSb_IUr2ZovxfKzchyc[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Please upload an excel file![39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI0NzU2MiwiZXhwIjoxNjM4MjUxMTYyfQ.SFBt6A7yuiF3NvRfmykNIw8qhSb_IUr2ZovxfKzchyc[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "61a31db980cd9ab7a8a26c5f1" (type string) at path "_id" for model "classroom"[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI1NTIyMywiZXhwIjoxNjM4MjU4ODIzfQ.3BLaHcUC305IupHE2QAAIfnyxTnMv7ctwphYR_cGjVA[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "18127076" (type string) at path "_id" for model "classroom"[39m
+[32minfo[39m: [32mDatabase connected...[39m
+[32minfo[39m: [32mServer is listening on port 5000[39m

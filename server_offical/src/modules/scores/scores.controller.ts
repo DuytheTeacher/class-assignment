@@ -35,7 +35,7 @@ export default class ScoresController {
       const classId = req.query.classId;
       const studentId = req.query.studentId;
       const listGradeStructure: Array<ScoreInterface> =
-        await this.scoreService.listScoresByStudentId(userId, classId as string, studentId as string);
+        await this.scoreService.listScoresByStudentId(userId, studentId as string, classId as string);
 
       const resp = new BodyResponse('Success', listGradeStructure);
       res.status(200).json(resp);
@@ -70,13 +70,13 @@ export default class ScoresController {
       const userId = req.user.id;
       const classId = req.body.classId;
       const file = req.file;
-      const scores: Array<ScoreInterface> =
+      const scores: string =
         await this.scoreService.uploadScoresOfListStudents(
           userId,
           classId,
           file
         );
-      const resp = new BodyResponse('Success', scores);
+      const resp = new BodyResponse('Success', {scores: scores});
       res.status(200).json(resp);
     } catch (error) {
       next(error);
