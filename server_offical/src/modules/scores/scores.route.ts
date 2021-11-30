@@ -38,7 +38,7 @@ export default class ClassroomsRoute implements Route {
     );
 
     this.router.get(
-      `${this.path}/get_list_by_student_id`,
+      `${this.path}/get_list_scores`,
       authMiddleware,
       this.scoresController.listScoresByStudentId
     );

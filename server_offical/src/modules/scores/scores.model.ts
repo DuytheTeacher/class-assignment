@@ -11,8 +11,7 @@ const ScoreSchema = new mongoose.Schema({
     maxlength: 50,
   },
   studentId: {
-    type: ObjectId,
-    ref: 'user',
+    type: String,
   },
   classId: {
     type: ObjectId,
@@ -39,7 +38,7 @@ const ScoreSchema = new mongoose.Schema({
 });
 
 const Score = mongoose.model<Score & mongoose.Document>(
-  'grades',
+  'scores',
   ScoreSchema
 );
 

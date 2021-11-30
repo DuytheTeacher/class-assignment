@@ -259,36 +259,33 @@ class ClassroomService {
 
     let path = global.__filename + file.filename;
     path = path.replace("..", "");
-    path = path.replace("/src", "/uploads");
+    path = path.replace("\src", "/uploads");
 
-    readXlsxFile(path).then((rows: any) => {
-      // skip header
-      rows.shift();
+    let rows = await readXlsxFile(path);
+    rows.shift();
+    let listStudents: Array<Student> = [];
 
-      let listStudents: Array<Student> = [];
+    for(let i = 0; i < rows.length; i++) {
+      const row: any = rows[i];
 
-      rows.forEach((row: any) => {
-        let student: Student = {
-          student_id: row[0],
-          full_name: row[1],
-        };
+      let student: Student = {
+        student_id: row[0],
+        full_name: row[1],
+      };
 
-        listStudents.push(student);
-      });
+      listStudents.push(student);
+    }
 
-      this.classroomSchema.findByIdAndUpdate(
-        classId, {
-          list_students_from_xlsx: listStudents,
-        }, 
-        {
-          new: true
-        }
-      ).then(updateClassroomById => {
-        if (!updateClassroomById) throw Error(`Fail to import data into database!`);
-      });
+    const updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
+      classId, {
+        list_students_from_xlsx: listStudents,
+      }, 
+      {
+        new: true
+      }
+    );
 
-    
-    })
+    if (!updateClassroomById) throw Error(`Fail to import data into database!`);
 
     return `Uploaded the file successfully: ${file.originalname}`;
   }
