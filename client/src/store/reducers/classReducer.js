@@ -1,10 +1,7 @@
 const { default: actionTypes } = require('store/actions/actionTypes');
 
 const initState = {
-  gradesList: [
-    { name: 'Midterm', maxScore: 0, ordinal: 0 },
-    { name: 'Finalterm', maxScore: 0, ordinal: 1 },
-  ],
+  gradesList: [],
 };
 
 const classReducer = (state = initState, action) => {
