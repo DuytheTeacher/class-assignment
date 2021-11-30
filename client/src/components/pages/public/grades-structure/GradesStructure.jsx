@@ -1,15 +1,18 @@
 // Librabries
-import React from 'react';
+import CloseIcon from '@mui/icons-material/Close';
+import AppBar from '@mui/material/AppBar';
 // UI Components
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
 import Slide from '@mui/material/Slide';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import React, { useRef } from 'react';
+// Components
 import { GradesStructureForm } from '..';
+// Services
+import ClassroomService from 'services/classroom.service';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
@@ -17,6 +20,22 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 
 const FullScreenDialog = (props) => {
   const { notifyOpenDialog, isOpenDialog } = props;
+  const classID = window.location.pathname.split('/')[2];
+  let submitFormGradesList;
+
+  const bindFormSubmit = (formSubmit) => {
+    submitFormGradesList = formSubmit;
+  };
+
+  const onSubmitGradesList = async (newGradesList) => {
+    try {
+      // await ClassroomService.createGradeStructure(classID, newGradesList);
+      submitFormGradesList();
+      notifyOpenDialog(false);
+    } catch (error) {
+      throw error;
+    }
+  };
 
   return (
     <div>
@@ -42,13 +61,13 @@ const FullScreenDialog = (props) => {
             <Button
               autoFocus
               color="inherit"
-              onClick={() => notifyOpenDialog(false)}
+              onClick={onSubmitGradesList}
             >
               save
             </Button>
           </Toolbar>
         </AppBar>
-        <GradesStructureForm />
+        <GradesStructureForm bindFormSubmit={bindFormSubmit} />
       </Dialog>
     </div>
   );

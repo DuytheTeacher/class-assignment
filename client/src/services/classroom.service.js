@@ -58,12 +58,24 @@ const getGradeStructure = async (classID) => {
   }
 };
 
+const createGradeStructure = async (classID, newGradesList) => {
+  try {
+    await api.post(`/gradestructure/create`, {
+      classId: classID,
+      createGradesStructure: newGradesList
+    });
+  } catch (error) {
+    throw error.message;
+  }
+};
+
 const exportedObject = {
   getListClassrooms,
   createClass,
   getClassDetail,
   getListParticipants,
-  getGradeStructure
+  getGradeStructure,
+  createGradeStructure
 };
 
 export default exportedObject;
