@@ -4,6 +4,7 @@ import BodyResponse from '@core/response_default';
 import CreateDto from './dtos/create.dto';
 import ClassroomService from './classrooms.service';
 import { Classroom } from './classrooms.interface';
+import { Workbook } from 'exceljs';
 
 export default class ClassroomsController {
   private classroomService = new ClassroomService();
@@ -173,6 +174,30 @@ export default class ClassroomsController {
 
       const resp = new BodyResponse('Success', {notification: notification});
       res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+
+  public downloadFileTemplateListStudents = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const excel: Workbook = await this.classroomService.downloadFileTemplateListStudents();
+      res.setHeader(
+        "Content-Type",
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      );
+      res.setHeader(
+        "Content-Disposition",
+        "attachment; filename=" + "liststudents.xlsx"
+      );
+
+      excel.xlsx.write(res).then(function () {
+        res.status(200).end();
+      });
     } catch (error) {
       next(error);
     }
