@@ -105,4 +105,23 @@ export default class ScoresController {
       next(error);
     }
   };
+
+  public showTotalScoreByStudentId = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userId = req.user.id;
+      const classId = req.query.classId;
+      const studentId = req.query.studentId;
+      const totalScore: number =
+        await this.scoreService.showTotalScoreByStudentId(userId, studentId as string, classId as string);
+
+      const resp = new BodyResponse('Success', {total: totalScore});
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
 }

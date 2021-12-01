@@ -82,6 +82,38 @@ class ScoreService {
 
     return listScores;
   }
+
+  public async showTotalScoreByStudentId(
+    userId: string,
+    studentId: string,
+    classId: string
+  ): Promise<number> {
+    const user = await UserSchema.findById(userId).exec();
+    const classes = await ClassroomSchema.findById(classId).exec();
+    if (!user || !classes) {
+      throw new HttpException(404, `User is not exists or Class is not exists`);
+    }
+
+    if (user.user_type === 0) {
+      throw new HttpException(400, `User is student `);
+    }
+
+    const listScores = await this.scoreSchema.find({classId: classId, studentId: studentId}).sort({ordinal: 1});
+    if (!listScores) {
+      throw new HttpException(409, `Scores is not exist`);
+    }
+
+    let total = 0;
+    for (let i = 0; i < listScores.length; i++) {
+      let gradesStruct = await GradeStructureSchema.findById(listScores[i].gradesStructId);
+      if (!gradesStruct) {
+        throw new HttpException(400, `Score is not exist`);
+      }
+      total += listScores[i].score * gradesStruct.maxScore / 100;
+    }
+
+    return total;
+  }
   
   public async update(
     userId: string,
@@ -133,60 +165,70 @@ class ScoreService {
       throw new HttpException(400, `User is student`);
     }
 
+    let scores = await this.scoreSchema.deleteMany({
+      classId: classId,
+    });
+
     let path = global.__filename + file.filename;
     path = path.replace("..", "");
     path = path.replace("\src", "/uploads");
 
     const listGradesStructure = await GradeStructureSchema.find({classroom: classId}).sort({ordinal: 1});
 
-    let count = 0;
-    let countScoreExist = 0;
+    
 
     let rows = await readXlsxFile(path);
     rows.shift();
-    let listStudents: any = [];
+   
 
     for(let i = 0; i < rows.length; i++) {
-      const row: any = rows[i];
-     
-      let flag = 0;
-      let scores = await this.scoreSchema.findOne({
-        studentId: row[0],
-        classId: classId,
-        gradesStructId: listGradesStructure[count]._id,
-      })
-      
-      if (scores) {
-        countScoreExist++;
-        flag = 1;
-      }
+      let count = 0;
+      let countScoreExist = 0;
+      let student: any = [];
 
-      if (flag == 0) {
-        let scores = {
-          name: listGradesStructure[count].name,
+      for (let k = 0; k < listGradesStructure.length; k++) {
+        const row: any = rows[i];
+     
+        let flag = 0;
+        let scores = await this.scoreSchema.findOne({
           studentId: row[0],
           classId: classId,
-          gradesStructId: listGradesStructure[count]._id.toHexString(),
-          score: row[1],
-          ordinal: listGradesStructure[count].ordinal,
-          createAt: Date.now(),
-          updateAt: Date.now(),
-        };
-
-        listStudents.push(scores);
+          gradesStructId: listGradesStructure[count]._id,
+        })
+        
+        if (scores) {
+          countScoreExist++;
+          flag = 1;
+        }
+  
+        if (flag == 0) {
+          let scores = {
+            name: listGradesStructure[count].name,
+            studentId: row[0],
+            classId: classId,
+            gradesStructId: listGradesStructure[count]._id.toHexString(),
+            score: row[k+1],
+            ordinal: listGradesStructure[count].ordinal,
+            createAt: Date.now(),
+            updateAt: Date.now(),
+          };
+  
+          student.push(scores);
+        }
+        count++;
       }
-      count++;
+
+      if (countScoreExist == count) {
+        throw new HttpException(400, `Data already exist`);
+      }
+
+      // console.log(listStudents);
+      const createScore = await this.scoreSchema.create(
+        student
+      );
+    
+      // if (!createScore) throw Error(`Fail to import data into database!`)
     }
-
-    if (countScoreExist == count) {
-      throw new HttpException(400, `Data already exist`);
-    }
-
-    const createScore = await this.scoreSchema.create(
-      listStudents
-    );
-
-    if (!createScore) throw Error(`Fail to import data into database!`)
 
     return `Uploaded the file successfully: ${file.originalname}`;
   }
