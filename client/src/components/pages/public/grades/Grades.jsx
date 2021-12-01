@@ -1,4 +1,5 @@
-import { Button, Typography } from '@material-ui/core';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import React, { useState, useEffect } from 'react';
 import styles from './Grades.module.scss';
 import { connect } from 'react-redux';
