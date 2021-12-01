@@ -4,3 +4,4 @@ export { default as ClassCard } from './card/ClassCard';
 export { default as ClassNews } from './class-news/ClassNews';
 export { default as GradesStructure } from './grades-structure/GradesStructure';
 export { default as GradesStructureForm } from './grades-structure-form/GradesStructureForm';
+export { default as Grades } from './grades/Grades';

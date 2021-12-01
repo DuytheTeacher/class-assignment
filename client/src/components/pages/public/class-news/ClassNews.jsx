@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { connect } from 'react-redux';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GradesStructure } from '..';
 // Services
 import ClassroomService from 'services/classroom.service';
@@ -122,14 +122,14 @@ const ClassNews = (props) => {
               >
                 {gradesList.map((grade) => {
                   return (
-                    <>
+                    <React.Fragment key={grade.ordinal}>
                       <Grid item xs={6}>
                         <Item>{grade.name}</Item>
                       </Grid>
                       <Grid item xs={6}>
                         <Item>{grade.maxScore}</Item>
                       </Grid>
-                    </>
+                    </React.Fragment>
                   );
                 })}
               </Grid>

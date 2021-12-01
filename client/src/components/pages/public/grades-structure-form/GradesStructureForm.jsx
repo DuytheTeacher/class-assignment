@@ -89,6 +89,14 @@ const SortableItem = ({
               onBlur={handleBlur}
               value={grade.maxScore}
             />
+            {/* Hidden field for ID */}
+            <TextField
+              sx={{ display: 'none' }}
+              id="_id"
+              type="string"
+              name={`gradesList.${i}._id`}
+              value={grade._id || ''}
+            />
           </Grid>
           <Grid item xs={1} className={styles.MenuIcon}>
             <IconButton
@@ -194,12 +202,12 @@ const FieldsArray = ({
 };
 
 const GradesStructureForm = (props) => {
-  const { gradesList, bindFormSubmit } = props;
+  const { gradesList, setGradesList, bindFormSubmit } = props;
 
   const initialValues = {
-    gradesList: gradesList.length ? gradesList : [
-      { name: 'Midterm', maxScore: 0, ordinal: 0 }
-    ],
+    gradesList: gradesList.length
+      ? gradesList
+      : [{ name: 'Midterm', maxScore: 0, ordinal: 0, _id: '' }]
   };
 
   const validationSchema = Yup.object().shape({
@@ -213,8 +221,8 @@ const GradesStructureForm = (props) => {
 
   const onSubmit = async (fields) => {
     const classID = window.location.pathname.split('/')[2];
-    const { setGradesList } = props;
     const isUpdate = gradesList.length;
+    console.log(fields.gradesList)
     const reoderedGradesList = fields.gradesList.map((item, index) => ({
       name: item.name,
       maxScore: item.maxScore,
