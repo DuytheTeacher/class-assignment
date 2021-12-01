@@ -8,9 +8,10 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 // Services
-import ClassroomService from '../../../../services/classroom.service';
+import ClassroomService from 'services/classroom.service';
 // Components
 import { ClassNews, Table } from '../../public';
+import Grades from 'components/pages/public/grades/Grades';
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -85,7 +86,7 @@ const ClassDetail = () => {
         {classDetail && <Table participants={participants}/>}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        {classDetail && <Grades />}
       </TabPanel>
     </div>
   );

@@ -6,6 +6,6 @@
   },
   "include": ["src/**/*"],
   "typeAcquisition": {
-    "exclude": [ "dotenv" ]
+    "exclude": [ "dotenv", "harmony-reflect" ]
   }
 }
