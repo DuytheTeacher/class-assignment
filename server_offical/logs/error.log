@@ -397,3 +397,13 @@
 [31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token ] in JSON at position 233[39m
 [31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWRmNzZkOTcxMGRkZjRmYzhkNjRjZSIsImlhdCI6MTYzNzc0MjQ0NiwiZXhwIjoxNjM3NzQ2MDQ2fQ.wUcDRFsEGfxPW-2P-Xb7lcP6wYVb57rjwxIfz0XLX9Q[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: Error when delete[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI2NDYyNCwiZXhwIjoxNjM4MjY4MjI0fQ.kf2l5l9TMBQNlupWMHCl0KP3QyRClAbe082eyf3cUNE[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Score is not exist[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODMyNjM1NiwiZXhwIjoxNjM4MzI5OTU2fQ.ycy8CgmzhseWcQJhh4VdNy2584H5YpJqcW-oJ7uFY3c[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name let12i2222e2122ss21s22s2s211ss11s1ss22snd1at is not exist[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI2NDYyNCwiZXhwIjoxNjM4MjY4MjI0fQ.kf2l5l9TMBQNlupWMHCl0KP3QyRClAbe082eyf3cUNE[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODMyNjM1NiwiZXhwIjoxNjM4MzI5OTU2fQ.ycy8CgmzhseWcQJhh4VdNy2584H5YpJqcW-oJ7uFY3c[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 404 - Msg: User is not exists or Class is not exists[39m
