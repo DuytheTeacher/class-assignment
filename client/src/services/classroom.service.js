@@ -80,6 +80,17 @@ const updateGradeStructure = async (classID, updatedGradesList) => {
   }
 };
 
+const uploadListStudent = async (classID, file) => {
+  try {
+    await api.post(`/classrooms/upload_file_list_students`, {
+      classId: classID,
+      file: file
+    }, { headers: {'Content-Type': 'multipart/form-data'} });
+  } catch (error) {
+    throw error.message;
+  }
+};
+
 const exportedObject = {
   getListClassrooms,
   createClass,
@@ -87,7 +98,8 @@ const exportedObject = {
   getListParticipants,
   getGradeStructure,
   createGradeStructure,
-  updateGradeStructure
+  updateGradeStructure,
+  uploadListStudent
 };
 
 export default exportedObject;

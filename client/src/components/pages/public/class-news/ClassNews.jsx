@@ -37,8 +37,6 @@ const ClassNews = (props) => {
       const resp = await ClassroomService.getGradeStructure(classID);
       if (resp.length)
         setGradesList(resp);
-      else
-        setGradesList([{ name: 'Midterm', maxScore: 0, ordinal: 0 }]);
     };
     getGradeStructure();
   }, [classID]);
