@@ -390,3 +390,10 @@
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "18127076" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxYTIyOWZiZDRkYzQ2MDk3MmFkN2QwYiIsImlhdCI6MTYzODI0NzU2MiwiZXhwIjoxNjM4MjUxMTYyfQ.SFBt6A7yuiF3NvRfmykNIw8qhSb_IUr2ZovxfKzchyc[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "scores"[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token ] in JSON at position 233[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxOWRmNzZkOTcxMGRkZjRmYzhkNjRjZSIsImlhdCI6MTYzNzc0MjQ0NiwiZXhwIjoxNjM3NzQ2MDQ2fQ.wUcDRFsEGfxPW-2P-Xb7lcP6wYVb57rjwxIfz0XLX9Q[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Error when delete[39m

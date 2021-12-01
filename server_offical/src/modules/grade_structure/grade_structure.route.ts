@@ -32,7 +32,7 @@ export default class GradeStructureRoute implements Route {
       this.gradeStructureController.updateGradeStructure
     );
     this.router.delete(
-      `${this.path}/detele`,
+      `${this.path}/delete`,
       authMiddleware,
       this.gradeStructureController.deleteGradeStructure
     );
