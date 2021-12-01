@@ -54,5 +54,11 @@ export default class ClassroomsRoute implements Route {
       `${this.path}/download_file_template_list_scores_of_students`,
       this.scoresController.downloadFileTemplateListScoresOfStudents
     )
+
+    this.router.get(
+      `${this.path}/show_total_score_by_student_id`,
+      authMiddleware,
+      this.scoresController.showTotalScoreByStudentId
+    );
   }
 }
