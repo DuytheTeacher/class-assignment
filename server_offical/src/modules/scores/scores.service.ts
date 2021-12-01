@@ -16,8 +16,8 @@ class ScoreService {
   public async create(
     userId: string,
     classId: string,
-    model: Array<CreateScoreDto>,
-  ): Promise<Array<ScoreInterface>> {
+    model: CreateScoreDto,
+  ): Promise<ScoreInterface> {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
@@ -32,51 +32,31 @@ class ScoreService {
       throw new HttpException(400, `User is student `);
     }
 
-    let gradesArray = [];
-    let count = 0;
-    for (let i = 0; i < model.length; i++) {
-      const gradesStructure = await GradeStructureSchema.findById(model[i].gradesStructId).exec();
+    const gradesStructure = await GradeStructureSchema.findById(model.gradesStructId).exec();
       if (!gradesStructure) {
         throw new HttpException(404, `gradesStructure is not exists`);
       }
 
-      // const student = await UserSchema.findById(model[i].studentId).exec();
-      // if (!student) {
-      //   throw new HttpException(404, `studentId is not exists`);
-      // }
-
-      // const objectStudentId = student.list_object_studentId.find(objectStudentId => objectStudentId.classroomId === classId);
-      // if (!objectStudentId) {
-      //   throw new HttpException(404, `classId is not exists in list_object_studentId`);
-      // }
-
       const gradesTemp = await this.scoreSchema.findOne({
-        studentId: model[i].studentId,
+        studentId: model.studentId,
         classId: classId,
-        gradesStructId: model[i].gradesStructId,
+        gradesStructId: model.gradesStructId,
       }).exec();
       if (gradesTemp) {
-        count++;
-        continue;
+        throw new HttpException(400, `Data already exist`);
       }
-      const createGrades: ScoreInterface =
+
+      const createScore =
         await this.scoreSchema.create({
-          ...model[i],
+          ...model,
           classId: classId,
           name: gradesStructure.name,
-          // objectStudentId: objectStudentId,
           ordinal: gradesStructure.ordinal,
           createAt: Date.now(),
           updateAt: Date.now(),
         });
-      gradesArray.push(createGrades);
-    }
 
-    if (count == model.length) {
-      throw new HttpException(400, `Data already exist`);
-    }
-
-    return gradesArray;
+    return createScore;
   }
 
   public async listScoresByStudentId(
@@ -104,26 +84,34 @@ class ScoreService {
   }
   
   public async update(
-    model: Array<UpdateScoreDto>,
-  ): Promise<Array<ScoreInterface>> {
+    userId: string,
+    model: UpdateScoreDto,
+  ): Promise<ScoreInterface> {
     if (isEmptyObject(model) === true) {
       throw new HttpException(400, 'Model is empty');
     }
-    let gradesArray = [];
-    for (let i = 0; i < model.length; i++) {
-      const updateGrades = await this.scoreSchema.findByIdAndUpdate(model[i]._id,
-        { 
-          ...model[i],
-          updateAt: new Date(),
-        },
-        { new: true }
-      );
-      if (!updateGrades) {
-        continue;
-      }
-      gradesArray.push(updateGrades);
+
+    const user = await UserSchema.findById(userId).exec();
+    if (!user) {
+      throw new HttpException(404, `User is not exists`);
     }
-    return gradesArray;
+
+    if (user.user_type === 0) {
+      throw new HttpException(400, `User is student `);
+    }
+
+    const updateGrades = await this.scoreSchema.findByIdAndUpdate(model._id,
+      { 
+        ...model,
+        updateAt: new Date(),
+      },
+      { new: true }
+    );
+    if (!updateGrades) {
+      throw new HttpException(409, `_Id is not exist`);
+    }
+
+    return updateGrades
   }
 
   public async uploadScoresOfListStudents(

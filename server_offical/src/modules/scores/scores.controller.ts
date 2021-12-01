@@ -12,11 +12,9 @@ export default class ScoresController {
   public create = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userId = req.user.id;
-      const classId = req.body.classId;
-      const model: Array<CreateScoresDto> =
-        req.body.createScores;
-      const scores: Array<ScoreInterface> =
-        await this.scoreService.create(userId, classId, model);
+      const model: CreateScoresDto = req.body;
+      const scores: ScoreInterface =
+        await this.scoreService.create(userId, model.classId, model);
 
       const resp = new BodyResponse('Success', scores);
       res.status(201).json(resp);
@@ -50,10 +48,10 @@ export default class ScoresController {
     next: NextFunction
   ) => {
     try {
-      const model: Array<UpdateScoresDto> =
-        req.body.updateGradesStructure;
-      const scores: Array<ScoreInterface> =
-        await this.scoreService.update(model);
+      const userId = req.user.id;
+      const model: UpdateScoresDto = req.body;
+      const scores: ScoreInterface =
+        await this.scoreService.update(userId, model);
       const resp = new BodyResponse('Success', scores);
       res.status(200).json(resp);
     } catch (error) {
