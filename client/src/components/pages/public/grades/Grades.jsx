@@ -148,7 +148,7 @@ export const Grades = (props) => {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href={`https://classroom-midterm.herokuapp.com/api/classrooms/download_file_template_list_students=${classID}`}
+            href={`https://classroom-midterm.herokuapp.com/api/classrooms/download_file_template_list_students?classId=${classID}`}
           >
             Download student template
           </a>
