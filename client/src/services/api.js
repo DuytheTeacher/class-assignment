@@ -3,9 +3,9 @@ import TokenService from './token.service';
 
 const instance = axios.create({
   baseURL: 'https://classroom-midterm.herokuapp.com/api',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  // headers: {
+  //   'Content-Type': 'application/json',
+  // },
 });
 
 instance.interceptors.request.use(

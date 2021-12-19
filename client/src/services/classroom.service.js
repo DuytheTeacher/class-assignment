@@ -80,12 +80,9 @@ const updateGradeStructure = async (classID, updatedGradesList) => {
   }
 };
 
-const uploadListStudent = async (classID, file) => {
+const uploadListStudent = async (body) => {
   try {
-    await api.post(`/classrooms/upload_file_list_students`, {
-      classId: classID,
-      file: file
-    }, { headers: {'Content-Type': 'multipart/form-data'} });
+    await api.post(`/classrooms/upload_file_list_students`, body);
   } catch (error) {
     throw error.message;
   }

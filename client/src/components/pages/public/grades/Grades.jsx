@@ -3,7 +3,6 @@ import Typography from '@mui/material/Typography';
 import React, { useState, useEffect } from 'react';
 import styles from './Grades.module.scss';
 import { connect } from 'react-redux';
-import Rating from '@mui/material/Rating';
 import { DataGrid } from '@mui/x-data-grid';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
@@ -69,6 +68,9 @@ export const Grades = (props) => {
   const { gradesList } = props;
   const classID = window.location.pathname.split('/')[2];
 
+  const [ rows, setRows ] = useState([]);
+  const [ scores, setScores ] = useState([]);
+
   const columns = () => {
     const scoreCols = gradesList.map((col) => ({
       field: col.name,
@@ -95,27 +97,11 @@ export const Grades = (props) => {
     ]
   };
 
-  const rows = () => {
-    const studentList = [
-      {
-        student_id: '18127076',
-        full_name: 'Lê Tiến Đạt',
-        _id: '61a77aa7803049efca6e18d7',
-      },
-      {
-        student_id: '18127090',
-        full_name: 'Nguyễn Anh Duy',
-        _id: '61a77aa7803049efca6e18d8',
-      },
-      {
-        student_id: '18127091',
-        full_name: 'Lê Minh Thành',
-        _id: '61a77aa7803049efca6e18d9',
-      },
-    ];
-    // const rows = studentList.map(async (item) => {
-    //   const resp = await ScoreService.getListScore(classID, item._id);
-    // });
+  const mappingScores = async (studentList) => {
+    const mappingScore = studentList.map(async (item) => {
+      const resp = await ScoreService.getListScore(classID, item._id);
+      console.log(resp);
+    });
 
     return [
       {id: '61a77aa7803049efca6e18d7', student_id: '18127076', full_name: 'Lê Tiến Đạt', 'Midterm': 0, 'Finalterm': 0},
@@ -124,14 +110,20 @@ export const Grades = (props) => {
     ];
   };
 
-  const onFileChange = (e) => {
+  const onFileChange = async (e) => {
     const uploadedFile = e.target.files;
     let bodyFormData = new FormData();
-    bodyFormData.append(uploadedFile[0].name, uploadedFile[0]);
+    bodyFormData.append('file', uploadedFile[0]);
+    bodyFormData.append('classId', classID);
 
-    ClassroomService.uploadListStudent(classID, bodyFormData).then((resp) => {
-      console.log(resp)
-    });
+    await ClassroomService.uploadListStudent(bodyFormData);
+    const resp = await ClassroomService.getClassDetail(classID);
+    mappingScores(rows)
+    setRows(resp.list_students_from_xlsx.map(item => {
+      const newItem = { ...item, id: item._id };
+      delete item._id;
+      return newItem;
+    }));
   };
 
   return (
@@ -164,7 +156,7 @@ export const Grades = (props) => {
         </Button>
       </Stack>
       <div style={{ height: 250, width: '100%' }}>
-        <DataGrid rows={rows()} columns={columns()} />
+        <DataGrid rows={rows} columns={columns()} />
       </div>
     </div>
   );
