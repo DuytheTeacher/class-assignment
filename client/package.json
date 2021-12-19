@@ -16,7 +16,7 @@
     "axios": "^0.24.0",
     "form-data": "^2.3.3",
     "formik": "^2.2.9",
-    "node-sass": "^4.14.1",
+    "node-sass": "6.0.0",
     "react": "^17.0.2",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^17.0.2",
