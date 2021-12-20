@@ -47,6 +47,7 @@ const ClassDetail = () => {
   const [value, setValue] = useState(0);
   const [classDetail, setClassDetail] = useState({});
   const [participants, setParticipants] = useState([]);
+  const [studentFromExcel, setStudentFromExcel] = useState([]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -55,6 +56,11 @@ const ClassDetail = () => {
   const getClassDetail = useCallback(async () => {
     const resp = await ClassroomService.getClassDetail(path);
     setClassDetail(resp);
+    setStudentFromExcel(resp.list_students_from_xlsx.map(item => {
+      const newItem = { ...item, id: item._id };
+      delete item._id;
+      return newItem;
+    }));
   }, [path]);
 
   const getListParticipants = useCallback(async () => {
@@ -86,7 +92,7 @@ const ClassDetail = () => {
         {classDetail && <Table participants={participants}/>}
       </TabPanel>
       <TabPanel value={value} index={2}>
-        {classDetail && <Grades />}
+        {classDetail && <Grades listStudentFromExcel={studentFromExcel}/>}
       </TabPanel>
     </div>
   );

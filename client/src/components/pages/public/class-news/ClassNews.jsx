@@ -9,7 +9,7 @@ import MenuItem from '@mui/material/MenuItem';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import { connect } from 'react-redux';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { GradesStructure } from '..';
 // Services
 import ClassroomService from 'services/classroom.service';
@@ -32,14 +32,18 @@ const ClassNews = (props) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [isOpenDialog, setIsOpenDialog] = useState(false);
 
-  useEffect(() => {
-    const getGradeStructure = async () => {
+  const getGradeStructure = useCallback(
+    async () => {
       const resp = await ClassroomService.getGradeStructure(classID);
       if (resp.length)
         setGradesList(resp);
-    };
+    },
+    [classID, setGradesList]
+  );
+
+  useEffect(() => {
     getGradeStructure();
-  }, [classID]);
+  }, [getGradeStructure]);
 
   const open = Boolean(anchorEl);
 
