@@ -42,7 +42,9 @@ export default class UserController {
   ) => {
     try {
       const email = req.query.email;
-      const user: IUser = await this.userService.getUserByEmail(email as string);
+      const user: IUser = await this.userService.getUserByEmail(
+        email as string
+      );
 
       const resp = new BodyResponse('Success', user);
       res.status(200).json(resp);
@@ -80,6 +82,47 @@ export default class UserController {
       const user: IUser = await this.userService.mappingStudentIdWithAccount(
         studentId,
         userId,
+        classroomId
+      );
+
+      const resp = new BodyResponse('Success', user);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+  public blockUser = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const userBlockId = req.user.id;
+      const userId = req.query.userId;
+      const user: IUser = await this.userService.blockUserById(
+        userId as string,
+        userBlockId
+      );
+      const resp = new BodyResponse('Success', user);
+      res.status(200).json(resp);
+    } catch (error) {
+      next(error);
+    }
+  };
+  public unMappStudentIdOfAccount = async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ) => {
+    try {
+      const adminId = req.user.id;
+      const studentId = req.body.studentId;
+      const memberId = req.body.memberId;
+      const classroomId = req.body.classroomId;
+      const user: IUser = await this.userService.unMappStudentIdOfAccount(
+        studentId,
+        memberId,
+        adminId,
         classroomId
       );
 
