@@ -65,10 +65,14 @@ const renderRatingEditInputCell = (params) => {
 }
 
 export const Grades = (props) => {
-  const { gradesList } = props;
+  const { gradesList, studentFromExcel } = props;
   const classID = window.location.pathname.split('/')[2];
 
-  const [ rows, setRows ] = useState([]);
+  const [ rows, setRows ] = useState(studentFromExcel.map(item => {
+    const newItem = { ...item, id: item._id };
+    delete item._id;
+    return newItem;
+  }));
   const [ scores, setScores ] = useState([]);
 
   const columns = () => {
@@ -98,16 +102,12 @@ export const Grades = (props) => {
   };
 
   const mappingScores = async (studentList) => {
-    const mappingScore = studentList.map(async (item) => {
+    const mappedStudentList = studentList.map(async (item) => {
       const resp = await ScoreService.getListScore(classID, item._id);
       console.log(resp);
     });
 
-    return [
-      {id: '61a77aa7803049efca6e18d7', student_id: '18127076', full_name: 'Lê Tiến Đạt', 'Midterm': 0, 'Finalterm': 0},
-      {id: '61a77aa7803049efca6e18d8', student_id: '18127090', full_name: 'Nguyễn Anh Duy', 'Midterm': 2, 'Finalterm': 3},
-      {id: '61a77aa7803049efca6e18d9', student_id: '18127091', full_name: 'Lê Minh Thành', 'Midterm': 2, 'Finalterm': 3}
-    ];
+    return mappedStudentList;
   };
 
   const onFileChange = async (e) => {
@@ -118,7 +118,7 @@ export const Grades = (props) => {
 
     await ClassroomService.uploadListStudent(bodyFormData);
     const resp = await ClassroomService.getClassDetail(classID);
-    mappingScores(rows)
+    mappingScores(rows);
     setRows(resp.list_students_from_xlsx.map(item => {
       const newItem = { ...item, id: item._id };
       delete item._id;

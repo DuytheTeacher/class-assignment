@@ -1,10 +1,11 @@
-// Librabries
+// UI Components
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Grid } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-// UI Components
+import Button from '@mui/material/Button';
+// Librabries
 import TextField from '@mui/material/TextField';
 import { FieldArray, Form, Formik } from 'formik';
 import React, { useState } from 'react';
@@ -26,25 +27,36 @@ const SortableItem = ({
   grade,
   remove,
   push,
-  values
+  values,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+  const classID = window.location.pathname.split('/')[2];
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleRemove = () => {
+  const handleRemove = async () => {
+    await deleteSingleLine();
     remove(i);
-    // setTempList(tempList.filter((item, index) => index !== i))
     handleClose();
   };
   const handlePush = () => {
-    push({ name: 'Midterm', maxScore: 0, ordinal: 0 });
-    // setTempList([...tempList, { name: 'Midterm', maxScore: 0, ordinal: 0 }])
+    push({ name: 'Midterm', maxScore: 0, ordinal: values.gradesList.length, isNew: true });
     handleClose();
+  };
+  const saveSingleLine = async () => {
+    if (grade.isNew) {
+      delete grade.isNew;
+      await ClassroomService.createGradeStructure(classID, [grade]);
+    }
+  };
+  const deleteSingleLine = async () => {
+    if (grade.isNew)
+      delete grade.isNew;
+    await ClassroomService.deleteGradeStructure(classID, [grade]);
   };
   return (
     <Draggable key={i} draggableId={`draggable-${i}`} index={i}>
@@ -72,7 +84,7 @@ const SortableItem = ({
               value={grade.name}
             />
           </Grid>
-          <Grid item xs={5}>
+          <Grid item xs={3}>
             <TextField
               fullWidth
               error={
@@ -97,6 +109,24 @@ const SortableItem = ({
               name={`gradesList.${i}._id`}
               value={grade._id || ''}
             />
+            {/* Hidden field for New flag */}
+            <TextField
+              sx={{ display: 'none' }}
+              id="isNew"
+              type="boolean"
+              name={`gradesList.${i}.isNew`}
+              value={grade.isNew || ''}
+            />
+          </Grid>
+          <Grid className={styles.SaveButton} item xs={2}>
+            <Button
+              sx={{ display: grade.isNew ? 'block' : 'none' }}
+              variant="contained"
+              disabled={!gradeTouched.maxScore && !gradeTouched.name}
+              onClick={saveSingleLine}
+            >
+              Save
+            </Button>
           </Grid>
           <Grid item xs={1} className={styles.MenuIcon}>
             <IconButton
@@ -119,7 +149,9 @@ const SortableItem = ({
               }}
             >
               <MenuItem onClick={handlePush}>Create a new Grade</MenuItem>
-              {values.gradesList.length > 1 && <MenuItem onClick={handleRemove}>Remove this Grade</MenuItem>}
+              {values.gradesList.length > 1 && (
+                <MenuItem onClick={handleRemove}>Remove this Grade</MenuItem>
+              )}
             </Menu>
           </Grid>
         </Grid>
@@ -207,7 +239,7 @@ const GradesStructureForm = (props) => {
   const initialValues = {
     gradesList: gradesList.length
       ? gradesList
-      : [{ name: 'Midterm', maxScore: 0, ordinal: 0, _id: '' }]
+      : [{ name: 'Midterm', maxScore: 0, ordinal: 0, _id: '' }],
   };
 
   const validationSchema = Yup.object().shape({
@@ -222,16 +254,17 @@ const GradesStructureForm = (props) => {
   const onSubmit = async (fields) => {
     const classID = window.location.pathname.split('/')[2];
     const isUpdate = gradesList.length;
-    console.log(fields.gradesList)
     const reoderedGradesList = fields.gradesList.map((item, index) => ({
       name: item.name,
       maxScore: item.maxScore,
       ordinal: index,
-      _id: isUpdate ? item._id : undefined
+      _id: isUpdate ? item._id : undefined,
     }));
 
-    if (!isUpdate) await ClassroomService.createGradeStructure(classID, reoderedGradesList);
-    else await ClassroomService.updateGradeStructure(classID, reoderedGradesList);
+    if (!isUpdate)
+      await ClassroomService.createGradeStructure(classID, reoderedGradesList);
+    else
+      await ClassroomService.updateGradeStructure(classID, reoderedGradesList);
     setGradesList(fields.gradesList);
   };
 
