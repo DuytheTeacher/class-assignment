@@ -80,6 +80,17 @@ const updateGradeStructure = async (classID, updatedGradesList) => {
   }
 };
 
+const deleteGradeStructure = async (classID, deleteGradesList) => {
+  try {
+    await api.delete(`/gradestructure/delete`, {
+      classId: classID,
+      deleteGradesStructure: deleteGradesList
+    });
+  } catch (error) {
+    throw error.message;
+  }
+};
+
 const uploadListStudent = async (body) => {
   try {
     await api.post(`/classrooms/upload_file_list_students`, body);
@@ -96,6 +107,7 @@ const exportedObject = {
   getGradeStructure,
   createGradeStructure,
   updateGradeStructure,
+  deleteGradeStructure,
   uploadListStudent
 };
 

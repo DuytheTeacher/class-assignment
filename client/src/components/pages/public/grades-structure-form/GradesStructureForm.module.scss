@@ -1,6 +1,12 @@
 .Form {
     padding: 3rem 5rem;
 
+    .SaveButton {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .MenuIcon {
         display: flex;
         align-items: center;
