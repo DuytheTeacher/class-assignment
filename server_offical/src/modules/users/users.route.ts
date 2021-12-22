@@ -1,13 +1,13 @@
-import { Route } from "@core/interfaces";
-import { authMiddleware } from "@core/middleware";
-import validationMiddleware from "@core/middleware/validation.middleware";
-import { Router } from "express";
-import RegisterDto from "./dtos/register.dto";
-import UpdateDto from "./dtos/update.dto";
-import UsersController from "./users.controller";
+import { Route } from '@core/interfaces';
+import { authMiddleware } from '@core/middleware';
+import validationMiddleware from '@core/middleware/validation.middleware';
+import { Router } from 'express';
+import RegisterDto from './dtos/register.dto';
+import UpdateDto from './dtos/update.dto';
+import UsersController from './users.controller';
 
 export default class UsersRoute implements Route {
-  public path = "/api/users";
+  public path = '/api/users';
   public router = Router();
 
   public usersController = new UsersController();
@@ -30,10 +30,7 @@ export default class UsersRoute implements Route {
       this.usersController.updateUser
     );
 
-    this.router.get(
-      `${this.path}/get/:id`,
-      this.usersController.getUserById
-    );
+    this.router.get(`${this.path}/get/:id`, this.usersController.getUserById);
 
     this.router.get(
       `${this.path}/get_user_by_email`,
@@ -44,6 +41,16 @@ export default class UsersRoute implements Route {
       `${this.path}/mapping_studentid`,
       authMiddleware,
       this.usersController.mappingStudentIdWithAccount
+    );
+    this.router.put(
+      `${this.path}/block`,
+      authMiddleware,
+      this.usersController.blockUser
+    );
+    this.router.put(
+      `${this.path}/unmapping_studentid`,
+      authMiddleware,
+      this.usersController.unMappStudentIdOfAccount
     );
   }
 }

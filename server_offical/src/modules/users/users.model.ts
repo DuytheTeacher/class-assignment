@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
-import { IUser } from "./users.interface";
-const { ObjectId } = require("mongoose").Types;
+import mongoose from 'mongoose';
+import { IUser } from './users.interface';
+const { ObjectId } = require('mongoose').Types;
 
 const UserSchema = new mongoose.Schema({
   account_name: {
@@ -36,13 +36,17 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  isBlocked: {
+    type: Number,
+    default: 0,
+  },
   user_type: {
     type: Number,
   },
   class_list_id: [
     {
       type: ObjectId,
-      ref: "classroom",
+      ref: 'classroom',
     },
   ],
   reg_type: {
@@ -58,10 +62,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
-    }
-  ]
+    },
+  ],
 });
 
-const User = mongoose.model<IUser & mongoose.Document>("user", UserSchema);
+const User = mongoose.model<IUser & mongoose.Document>('user', UserSchema);
 
 export default User;
