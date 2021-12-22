@@ -56,11 +56,15 @@ const ClassDetail = () => {
   const getClassDetail = useCallback(async () => {
     const resp = await ClassroomService.getClassDetail(path);
     setClassDetail(resp);
+<<<<<<< Updated upstream
     setStudentFromExcel(resp.list_students_from_xlsx.map(item => {
       const newItem = { ...item, id: item._id };
       delete item._id;
       return newItem;
     }));
+=======
+    setStudentFromExcel(resp.list_students_from_xlsx);
+>>>>>>> Stashed changes
   }, [path]);
 
   const getListParticipants = useCallback(async () => {
@@ -92,7 +96,11 @@ const ClassDetail = () => {
         {classDetail && <Table participants={participants}/>}
       </TabPanel>
       <TabPanel value={value} index={2}>
+<<<<<<< Updated upstream
         {classDetail && <Grades listStudentFromExcel={studentFromExcel}/>}
+=======
+        {classDetail && <Grades studentFromExcel={studentFromExcel}/>}
+>>>>>>> Stashed changes
       </TabPanel>
     </div>
   );

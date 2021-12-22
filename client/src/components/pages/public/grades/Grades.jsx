@@ -65,10 +65,14 @@ const renderRatingEditInputCell = (params) => {
 }
 
 export const Grades = (props) => {
-  const { gradesList, listStudentFromExcel } = props;
+  const { gradesList, studentFromExcel } = props;
   const classID = window.location.pathname.split('/')[2];
 
-  const [ rows, setRows ] = useState(listStudentFromExcel);
+  const [ rows, setRows ] = useState(studentFromExcel.map(item => {
+    const newItem = { ...item, id: item._id };
+    delete item._id;
+    return newItem;
+  }));
   const [ scores, setScores ] = useState([]);
 
   const columns = () => {
