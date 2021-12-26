@@ -1,13 +1,7 @@
-import {
-  Route
-} from '@core/interfaces';
-import {
-  authMiddleware, uploadFileMiddleware
-} from '@core/middleware';
+import { Route } from '@core/interfaces';
+import { authMiddleware, uploadFileMiddleware } from '@core/middleware';
 import validationMiddleware from '@core/middleware/validation.middleware';
-import {
-  Router
-} from 'express';
+import { Router } from 'express';
 import ScoresController from './scores.controller';
 import CreateScoreDto from './dtos/create.dto';
 import UpdateScoreDto from './dtos/update.dto';
@@ -46,14 +40,14 @@ export default class ClassroomsRoute implements Route {
     this.router.post(
       `${this.path}/upload_file_list_scores_of_students`,
       authMiddleware,
-      uploadFileMiddleware.single("file"),
+      uploadFileMiddleware.single('file'),
       this.scoresController.uploadScoresOfListStudents
-    )
+    );
 
     this.router.get(
       `${this.path}/download_file_template_list_scores_of_students`,
       this.scoresController.downloadFileTemplateListScoresOfStudents
-    )
+    );
 
     this.router.get(
       `${this.path}/show_total_score_by_student_id`,

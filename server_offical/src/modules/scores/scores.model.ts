@@ -19,9 +19,12 @@ const ScoreSchema = new mongoose.Schema({
   },
   gradesStructId: {
     type: ObjectId,
-    ref: 'classroom',
+    ref: 'gradeStructure',
   },
   score: {
+    type: Number,
+  },
+  expectation_score: {
     type: Number,
   },
   ordinal: {
@@ -37,9 +40,6 @@ const ScoreSchema = new mongoose.Schema({
   },
 });
 
-const Score = mongoose.model<Score & mongoose.Document>(
-  'scores',
-  ScoreSchema
-);
+const Score = mongoose.model<Score & mongoose.Document>('scores', ScoreSchema);
 
 export default Score;
