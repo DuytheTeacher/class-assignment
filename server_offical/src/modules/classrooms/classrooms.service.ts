@@ -1,30 +1,20 @@
-import {
-  isEmptyObject,
-  Logger
-} from "@core/utils";
-import {
-  HttpException
-} from "@core/exception";
-import ClassroomSchema from "./classrooms.model";
-import CreateDto from "./dtos/create.dto";
-import {Classroom, Student} from "./classrooms.interface";
-import {
-  UserSchema
-} from "@modules/users";
-import {
-  IUser,
-  ObjectStudentId,
-} from "@modules/users/";
-import nodemailer from "nodemailer";
-import CryptoJS from "crypto-js";
-import readXlsxFile from "read-excel-file/node";
-import excel, { Workbook } from "exceljs";
+import { isEmptyObject, Logger } from '@core/utils';
+import { HttpException } from '@core/exception';
+import ClassroomSchema from './classrooms.model';
+import CreateDto from './dtos/create.dto';
+import { Classroom, Student } from './classrooms.interface';
+import { UserSchema } from '@modules/users';
+import { IUser, ObjectStudentId } from '@modules/users/';
+import nodemailer from 'nodemailer';
+import CryptoJS from 'crypto-js';
+import readXlsxFile from 'read-excel-file/node';
+import excel, { Workbook } from 'exceljs';
 class ClassroomService {
   public classroomSchema = ClassroomSchema;
 
-  public async create(userId: string, model: CreateDto): Promise < Classroom > {
+  public async create(userId: string, model: CreateDto): Promise<Classroom> {
     if (isEmptyObject(model) === true) {
-      throw new HttpException(400, "Model is empty");
+      throw new HttpException(400, 'Model is empty');
     }
 
     const user = await UserSchema.findById(userId).exec();
@@ -38,7 +28,7 @@ class ClassroomService {
 
     const classroom = await this.classroomSchema
       .findOne({
-        name: model.name
+        name: model.name,
       })
       .exec();
     if (classroom) {
@@ -52,7 +42,7 @@ class ClassroomService {
       ...model,
       auth: {
         auth_id: userId,
-        name: `${user.last_name} ${user.first_name}`
+        name: `${user.last_name} ${user.first_name}`,
       },
       participants_id: [userId],
       createTime: Date.now(),
@@ -63,16 +53,14 @@ class ClassroomService {
     //update user
     let updateUserById;
     class_list_id.push(createClassroom._id);
-    updateUserById = await UserSchema.findByIdAndUpdate(
-      userId, {
-        class_list_id: class_list_id,
-      }
-    );
+    updateUserById = await UserSchema.findByIdAndUpdate(userId, {
+      class_list_id: class_list_id,
+    });
 
     return createClassroom;
   }
 
-  public async getDetail(classroomId: string): Promise < Classroom > {
+  public async getDetail(classroomId: string): Promise<Classroom> {
     const classroom = await this.classroomSchema.findById(classroomId).exec();
     if (!classroom) {
       throw new HttpException(409, `Classroom is not exist`);
@@ -81,17 +69,15 @@ class ClassroomService {
     return classroom;
   }
 
-  public async listUserInClassroom(classroomId: string): Promise < Array < IUser >> {
-    const listUser = < any > (
-      await this.classroomSchema
+  public async listUserInClassroom(classroomId: string): Promise<Array<IUser>> {
+    const listUser = <any>await this.classroomSchema
       .findOne({
-        _id: classroomId
+        _id: classroomId,
       })
-      .populate("participants_id")
+      .populate('participants_id')
       .select({
-        user: 1
-      })
-    );
+        user: 1,
+      });
     if (!listUser) {
       throw new HttpException(409, `Classroom or User is not exist`);
     }
@@ -99,10 +85,8 @@ class ClassroomService {
     return listUser;
   }
 
-  public async listClassroom(): Promise < Array < Classroom >> {
-    const listClassroom = < any > (
-      await this.classroomSchema.find()
-    );
+  public async listClassroom(): Promise<Array<Classroom>> {
+    const listClassroom = <any>await this.classroomSchema.find();
 
     if (!listClassroom) {
       throw new HttpException(409, `Classroom is not exist`);
@@ -111,18 +95,17 @@ class ClassroomService {
     return listClassroom;
   }
 
-  public async listClassroomByUserId(userId: string): Promise < Array < Classroom >> {
+  public async listClassroomByUserId(
+    userId: string
+  ): Promise<Array<Classroom>> {
     // const userService = new UserService();
-    const listClassroom = < any > (
-      await UserSchema
-      .findOne({
-        _id: userId
-      })
-      .populate("class_list_id")
+    const listClassroom = <any>await UserSchema.findOne({
+      _id: userId,
+    })
+      .populate('class_list_id')
       .select({
-        classroom: 1
-      })
-    );
+        classroom: 1,
+      });
     if (!listClassroom) {
       throw new HttpException(409, `User or Classroom is not exist`);
     }
@@ -133,12 +116,18 @@ class ClassroomService {
   public async joinInClassroom(
     encryptClassroomId: string,
     encryptUserId: string
-  ): Promise < Classroom > {
+  ): Promise<Classroom> {
     //Decode userId and classroomId
-    const bytesUserId = CryptoJS.AES.decrypt(encryptUserId, process.env.SECRET_KEY!);
+    const bytesUserId = CryptoJS.AES.decrypt(
+      encryptUserId,
+      process.env.SECRET_KEY!
+    );
     const userId = bytesUserId.toString(CryptoJS.enc.Utf8);
 
-    const bytesClassroomId = CryptoJS.AES.decrypt(encryptClassroomId, process.env.SECRET_KEY!);
+    const bytesClassroomId = CryptoJS.AES.decrypt(
+      encryptClassroomId,
+      process.env.SECRET_KEY!
+    );
     const classroomId = bytesClassroomId.toString(CryptoJS.enc.Utf8);
 
     //classroom
@@ -164,23 +153,23 @@ class ClassroomService {
     //update classroom
     participants_id.push(userId);
     let updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
-      classroomId, {
+      classroomId,
+      {
         participants_id: participants_id,
-      }, {
-        new: true
+      },
+      {
+        new: true,
       }
     );
 
     //update user
     class_list_id.push(classroomId);
-    let updateUserById = await UserSchema.findByIdAndUpdate(
-      userId, {
-        class_list_id: class_list_id,
-      }
-    );
+    let updateUserById = await UserSchema.findByIdAndUpdate(userId, {
+      class_list_id: class_list_id,
+    });
 
     if (!updateClassroomById) {
-      throw new HttpException(409, "Error when update classroom");
+      throw new HttpException(409, 'Error when update classroom');
     }
 
     return updateClassroomById;
@@ -189,7 +178,7 @@ class ClassroomService {
   public async createClassroomInvitationLink(
     classroomId: string,
     userId: string
-  ): Promise < string > {
+  ): Promise<string> {
     const classroom = await this.classroomSchema.findById(classroomId);
     if (!classroom) {
       throw new HttpException(409, `Classroom is not exist`);
@@ -201,21 +190,35 @@ class ClassroomService {
     if (IsExistInClassroom === true) {
       throw new HttpException(409, `User already exist in classroom`);
     }
-
-    const encryptUserId: string = CryptoJS.AES.encrypt(userId, process.env.SECRET_KEY!).toString();
-    const encryptclassroomId: string = CryptoJS.AES.encrypt(classroomId, process.env.SECRET_KEY!).toString();
+    const user = await UserSchema.findById(userId);
+    if (!user) {
+      throw new HttpException(404, `User is not exist`);
+    }
+    if (user.user_type !== 1) {
+      throw new HttpException(400, 'You can not invite');
+    }
+    const encryptUserId: string = CryptoJS.AES.encrypt(
+      userId,
+      process.env.SECRET_KEY!
+    ).toString();
+    const encryptclassroomId: string = CryptoJS.AES.encrypt(
+      classroomId,
+      process.env.SECRET_KEY!
+    ).toString();
     //${process.env.ENDPOINT}
-    return `http://localhost:5000/api/classrooms/join_in_classroom?userId=${encodeURIComponent(encryptUserId)}&classId=${encodeURIComponent(encryptclassroomId)}`;
+    return `http://localhost:5000/api/classrooms/join_in_classroom?userId=${encodeURIComponent(
+      encryptUserId
+    )}&classId=${encodeURIComponent(encryptclassroomId)}`;
   }
 
   public async sendClassroomInvitationLink(
     userId: string,
     mail: string,
     link: string
-  ): Promise < string > {
+  ): Promise<string> {
     const transporter = nodemailer.createTransport({
       // config mail server
-      host: "smtp.gmail.com",
+      host: 'smtp.gmail.com',
       port: 465,
       secure: true,
       auth: {
@@ -230,9 +233,9 @@ class ClassroomService {
 
     const mainOptions = {
       // thiết lập đối tượng, nội dung gửi mail
-      from: "system classroom",
+      from: 'system classroom',
       to: mail,
-      subject: "DatDuyThanh",
+      subject: 'DatDuyThanh',
       text: link, //Thường thi mình không dùng cái này thay vào đó mình sử dụng html để dễ edit hơn
       // html: content //Nội dung html mình đã tạo trên kia :))
     };
@@ -242,30 +245,27 @@ class ClassroomService {
         Logger.info(err);
         throw new HttpException(409, `Error when send mail: ${err}`);
       } else {
-        Logger.info("Message sent: " + info.response);
+        Logger.info('Message sent: ' + info.response);
       }
     });
 
-    return `Send mail success`
+    return `Send mail success`;
   }
 
-  public async uploadListStudents(
-    file: any,
-    classId: string,
-  ): Promise < string > {
+  public async uploadListStudents(file: any, classId: string): Promise<string> {
     if (file == undefined) {
       throw new HttpException(409, `Please upload an excel file!`);
     }
 
     let path = global.__filename + file.filename;
-    path = path.replace("..", "");
-    path = path.replace("\src", "/uploads");
+    path = path.replace('..', '');
+    path = path.replace('src', '/uploads');
 
     let rows = await readXlsxFile(path);
     rows.shift();
     let listStudents: Array<Student> = [];
 
-    for(let i = 0; i < rows.length; i++) {
+    for (let i = 0; i < rows.length; i++) {
       const row: any = rows[i];
 
       let student: Student = {
@@ -277,11 +277,12 @@ class ClassroomService {
     }
 
     const updateClassroomById = await this.classroomSchema.findByIdAndUpdate(
-      classId, {
-        list_students_from_xlsx: listStudents,
-      }, 
+      classId,
       {
-        new: true
+        list_students_from_xlsx: listStudents,
+      },
+      {
+        new: true,
       }
     );
 
@@ -290,28 +291,28 @@ class ClassroomService {
     return `Uploaded the file successfully: ${file.originalname}`;
   }
 
-  public async downloadFileTemplateListStudents(): Promise < Workbook > {
+  public async downloadFileTemplateListStudents(): Promise<Workbook> {
     const listStudents = [
       {
-        studentId: "18127076",
-        fullName: "Lê Tiến Đạt"
+        studentId: '18127076',
+        fullName: 'Lê Tiến Đạt',
       },
       {
-        studentId: "18127090",
-        fullName: "Nguyễn Anh Duy"
+        studentId: '18127090',
+        fullName: 'Nguyễn Anh Duy',
       },
       {
-        studentId: "18127091",
-        fullName: "Lê Minh Thành"
+        studentId: '18127091',
+        fullName: 'Lê Minh Thành',
       },
     ];
 
     let workbook: Workbook = new excel.Workbook();
-    let worksheet = workbook.addWorksheet("ListStudents");
+    let worksheet = workbook.addWorksheet('ListStudents');
 
     worksheet.columns = [
-      { header: "studentId", key: "studentId", width: 10 },
-      { header: "fullName", key: "fullName", width: 30 },
+      { header: 'studentId', key: 'studentId', width: 10 },
+      { header: 'fullName', key: 'fullName', width: 30 },
     ];
 
     // Add Array Rows

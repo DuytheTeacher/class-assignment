@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import BodyResponse from '@core/response_default';
-import CreateScoresDto from './dtos/create.dto';
+import CreateReviewDto from './dtos/create.dto';
 import ReviewGradeService from './review_grade_service';
 import ReviewInterface from './review_grade.interface';
 
@@ -10,7 +10,7 @@ export default class ReviewsController {
   public create = async (req: Request, res: Response, next: NextFunction) => {
     try {
       const userId = req.user.id;
-      const model: CreateScoresDto = req.body;
+      const model: CreateReviewDto = req.body;
       const review: ReviewInterface = await this.reviewService.create(
         userId,
         model

@@ -4,8 +4,8 @@ import validationMiddleware from '@core/middleware/validation.middleware';
 import { Router } from 'express';
 import ReviewsController from './review_grade.controller';
 import CreateScoreDto from './dtos/create.dto';
-export default class ClassroomsRoute implements Route {
-  public path = '/api/scores/reviews';
+export default class ReviewsRoute implements Route {
+  public path = '/api/reviews';
   public router = Router();
 
   public reviewsController = new ReviewsController();
