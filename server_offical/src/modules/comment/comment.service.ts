@@ -6,8 +6,8 @@ import ScoreSchema from '@modules/scores/scores.model';
 import CommentSchema from '@modules/comment/comment.model';
 import CommentInterface from './comment.interface';
 import CreateReviewDto from './dtos/create.dto';
-import ScoreInterface from '@modules/scores/scores.interface';
 import ReviewGrade from '@modules/review_grade/review_grade.model';
+import CommentResponseInterface from './dtos/commentResponse';
 class CommentService {
   public commentSchema = CommentSchema;
 
@@ -56,7 +56,7 @@ class CommentService {
   public async getListCommentByReviewId(
     userId: string,
     reviewId: string
-  ): Promise<Array<CommentInterface>> {
+  ): Promise<Array<CommentResponseInterface>> {
     const user = await UserSchema.findById(userId).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
@@ -70,8 +70,10 @@ class CommentService {
       listComment = <any>(
         await this.commentSchema
           .find({ reviewId: reviewId, auth: userId })
+          .populate('auth')
           .exec()
       );
+      console.log(listComment[0].auth);
       if (!listComment) {
         throw new HttpException(400, 'Can not get list review');
       }
@@ -89,13 +91,15 @@ class CommentService {
         throw new HttpException(400, 'Teacher do not join this ClassRoom');
       }
       listComment = <any>(
-        await this.commentSchema.find({ reviewId: reviewId }).exec()
+        await this.commentSchema
+          .find({ reviewId: reviewId })
+          .populate('auth')
+          .exec()
       );
       if (!listComment) {
         throw new HttpException(404, `Comments is not exist `);
       }
     }
-
     return listComment;
   }
 }

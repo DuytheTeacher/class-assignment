@@ -407,3 +407,22 @@
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] - 404 - Msg: User is not exists or Class is not exists[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token " in JSON at position 1[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Malformed UTF-8 data[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cast to ObjectId failed for value "" (type string) at path "_id" for model "classroom"[39m
+[31merror[39m: [31m[ERROR] Msg: Bear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2IzNDg0MTkzOGM1ODEwMGI5NTcwYyIsImlhdCI6MTY0MDc5MDA4MiwiZXhwIjoxNjQwNzkzNjgyfQ.-k8VlYf_Wd8OM25IWsuBdOOxMxobTcMDYBeAgMIwENI[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: User already exist in classroom[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: User is  not student [39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Unexpected token " in JSON at position 0[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 404 - Msg: User is not Student in classroom[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 404 - Msg: Review is not exists[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: User do not join classroom [39m

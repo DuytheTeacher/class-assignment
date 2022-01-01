@@ -34,6 +34,13 @@ class ReviewGradeService {
     if (!score) {
       throw new HttpException(409, `Score is not exist`);
     }
+    const userInClass = await ClassroomSchema.findOne({
+      _id: score.classId,
+      participants_id: userId,
+    });
+    if (!userInClass) {
+      throw new HttpException(404, `User is not Student in classroom`);
+    }
     const dataReview = await this.reviewGradeSchema
       .findOne({ auth: userId, scoreId: model.scoreId })
       .exec();
@@ -73,7 +80,7 @@ class ReviewGradeService {
 
     if (user.user_type === 1) {
       listReview = <any>(
-        await this.reviewGradeSchema.find({ _id: { $in: listScore } }).exec()
+        await this.reviewGradeSchema.find({ $in: listScore }).exec()
       );
       if (!listReview) {
         throw new HttpException(404, `Reviews is not Exist`);
