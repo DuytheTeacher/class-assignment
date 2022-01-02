@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import {Classroom} from './classrooms.interface';
+import { Classroom } from './classrooms.interface';
 
 const { ObjectId } = require('mongoose').Types;
 
@@ -24,6 +24,12 @@ const ClassroomSchema = new mongoose.Schema({
   },
   backdrop: {
     type: String,
+  },
+  startTime: {
+    type: Date,
+  },
+  finishTime: {
+    type: Date,
   },
   participants_id: [
     {

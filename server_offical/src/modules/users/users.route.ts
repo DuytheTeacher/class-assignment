@@ -43,14 +43,26 @@ export default class UsersRoute implements Route {
       this.usersController.mappingStudentIdWithAccount
     );
     this.router.put(
-      `${this.path}/block`,
+      `${this.path}/admin/block`,
       authMiddleware,
       this.usersController.blockUser
     );
     this.router.put(
-      `${this.path}/unmapping_studentid`,
+      `${this.path}/admin/unmapping_studentid`,
       authMiddleware,
       this.usersController.unMappStudentIdOfAccount
+    );
+    this.router.get(
+      `${this.path}/admin/get_list_class_by_time`,
+      this.usersController.getListClassroomByCreateTime
+    );
+    this.router.get(
+      `${this.path}/admin/get_list_class_by_search`,
+      this.usersController.getListClassroomBySearchName
+    );
+    this.router.get(
+      `${this.path}/admin/get_list_user`,
+      this.usersController.getListUser
     );
   }
 }
