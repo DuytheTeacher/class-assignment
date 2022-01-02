@@ -11,6 +11,7 @@ import { generateJwtToken, randomTokenString } from '@core/utils/helpers';
 import { RefreshTokenSchema } from '@modules/refresh_token';
 // import ClassroomService from "@modules/classrooms/classrooms.service";
 import { Classroom, ClassroomSchema } from '@modules/classrooms';
+import ClassroomsController from '@modules/classrooms/classrooms.controller';
 
 class UserService {
   public userSchema = UserSchema;
@@ -97,12 +98,21 @@ class UserService {
     return user_updated;
   }
 
-  public async getUserById(userId: string): Promise<IUser> {
-    const user = await this.userSchema.findById(userId).exec();
+  public async getUserById(
+    userId: string,
+    detailUserId: string
+  ): Promise<IUser> {
+    const user = await this.userSchema
+      .findOne({ _id: userId, isBlocked: 0 })
+      .exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
-    return user;
+    const detailUser = await this.userSchema.findById(detailUserId).exec();
+    if (!detailUser) {
+      throw new HttpException(404, ' Can not get detail user');
+    }
+    return detailUser;
   }
 
   public async getUserByEmail(email: string): Promise<IUser> {
@@ -230,13 +240,10 @@ class UserService {
       throw new HttpException(404, `Classroom is not exists`);
     }
     const user = await this.userSchema
-      .findOne({ _id: adminId, isBlocked: 0 })
+      .findOne({ _id: adminId, isBlocked: 0, user_type: 2 })
       .exec();
     if (!user) {
       throw new HttpException(404, `Admin is not exists`);
-    }
-    if (user.user_type !== 2) {
-      throw new HttpException(400, `User is not admin`);
     }
 
     const updateUser = await this.userSchema
@@ -259,6 +266,60 @@ class UserService {
     }
 
     return updateUser;
+  }
+  public async getlistUser(
+    userId: string,
+    typeUserGet: number
+  ): Promise<Array<IUser>> {
+    const user = await this.userSchema
+      .findOne({ _id: userId, isBlocked: 0, user_type: 2 })
+      .exec();
+    if (!user) {
+      throw new HttpException(404, `Admin is not exists`);
+    }
+    const users = <any>await this.userSchema.find({ user_type: typeUserGet });
+    if (!users) {
+      throw new HttpException(404, 'Users not found');
+    }
+    return users;
+  }
+  public async getListClassroomSortByTime(
+    userId: string,
+    typeSort: number
+  ): Promise<Array<Classroom>> {
+    const user = await this.userSchema
+      .findOne({ _id: userId, isBlocked: 0, user_type: 2 })
+      .exec();
+    if (!user) {
+      throw new HttpException(404, `Admin is not exists`);
+    }
+    const classrooms = await ClassroomSchema.find()
+      .sort({
+        createAt: typeSort,
+      })
+      .exec();
+    if (!classrooms) {
+      throw new HttpException(404, 'Not Found list Classroom');
+    }
+    return classrooms;
+  }
+  public async getListClassroomSortBySearch(
+    userId: string,
+    nameSearch: string
+  ): Promise<Array<Classroom>> {
+    const user = await this.userSchema
+      .findOne({ _id: userId, isBlocked: 0, user_type: 2 })
+      .exec();
+    if (!user) {
+      throw new HttpException(404, `Admin is not exists`);
+    }
+    const classrooms = await ClassroomSchema.find({
+      name: { $regex: nameSearch, $options: 'i' },
+    }).exec();
+    if (!classrooms) {
+      throw new HttpException(404, 'Not Found list Classroom');
+    }
+    return classrooms;
   }
 }
 
