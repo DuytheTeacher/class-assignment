@@ -21,7 +21,7 @@ class GradeStructureService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);
@@ -65,7 +65,7 @@ class GradeStructureService {
     userId: string,
     classId: string
   ): Promise<Array<GradeStructureInterface>> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);

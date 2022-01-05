@@ -21,7 +21,10 @@ class CommentService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -72,7 +75,10 @@ class CommentService {
     userId: string,
     reviewId: string
   ): Promise<Array<CommentResponseInterface>> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
