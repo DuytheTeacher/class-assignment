@@ -9,6 +9,7 @@ import GradeStructureRoute from '@modules/grade_structure/grade_structure.route'
 import ReviewsRoute from '@modules/review_grade/review_grade.route';
 import CommentsRoute from '@modules/comment/comment.route';
 import ScoresRoute from '@modules/scores/scores.route';
+import NotificationRoute from '@modules/notification/notification.route';
 
 validateEnv();
 global.__filename = __dirname + '/..';
@@ -21,6 +22,7 @@ const routes = [
   new ScoresRoute(),
   new ReviewsRoute(),
   new CommentsRoute(),
+  new NotificationRoute(),
 ];
 const app = new App(routes);
 

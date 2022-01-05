@@ -426,3 +426,10 @@
 [31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
 [31merror[39m: [31m[ERROR] - 404 - Msg: Review is not exists[39m
 [31merror[39m: [31m[ERROR] - 400 - Msg: User do not join classroom [39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2IzNDg0MTkzOGM1ODEwMGI5NTcwYyIsImlhdCI6MTY0MDc5NzE0NSwiZXhwIjoxNjQwODAwNzQ1fQ.qJnvhYTfjO6hMxKwP2j_OUeWLpQL4FoZPw6NzMM9Wno[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'user_type' of null[39m
+[31merror[39m: [31m[ERROR] - 400 - Msg: Data already exist[39m
+[31merror[39m: [31m[ERROR] - 500 - Msg: Cannot read property 'user_type' of null[39m
+[31merror[39m: [31m[ERROR] - 404 - Msg: User is not exist[39m
+[31merror[39m: [31m[ERROR] - 409 - Msg: Your account_name ThanhTeacher already exist[39m
+[31merror[39m: [31m[ERROR] Msg: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxY2IzNDg0MTkzOGM1ODEwMGI5NTcwYyIsImlhdCI6MTY0MDc5MDA4MiwiZXhwIjoxNjQwNzkzNjgyfQ.-k8VlYf_Wd8OM25IWsuBdOOxMxobTcMDYBeAgMIwENI[39m

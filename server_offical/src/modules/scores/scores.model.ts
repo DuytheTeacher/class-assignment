@@ -24,9 +24,6 @@ const ScoreSchema = new mongoose.Schema({
   score: {
     type: Number,
   },
-  expectation_score: {
-    type: Number,
-  },
   ordinal: {
     type: Number,
   },
