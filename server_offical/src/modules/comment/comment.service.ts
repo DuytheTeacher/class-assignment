@@ -8,6 +8,8 @@ import CommentInterface from './comment.interface';
 import CreateReviewDto from './dtos/create.dto';
 import ReviewGrade from '@modules/review_grade/review_grade.model';
 import CommentResponseInterface from './dtos/commentResponse';
+import NotificationObject from '@modules/notification/dtos/notificationResponse';
+import Notification from '@modules/notification/notification.model';
 class CommentService {
   public commentSchema = CommentSchema;
 
@@ -51,6 +53,19 @@ class CommentService {
       ...model,
       auth: userId,
     });
+    if (user.user_type === 1) {
+      const arrayReceiver = [];
+      arrayReceiver.push(review.auth);
+      const notificationObject = new NotificationObject(
+        ' Teacher Replies Your Review ',
+        user._id,
+        comment.reviewId,
+        arrayReceiver
+      );
+      const notification = await Notification.create({
+        ...notificationObject,
+      });
+    }
     return comment;
   }
   public async getListCommentByReviewId(
