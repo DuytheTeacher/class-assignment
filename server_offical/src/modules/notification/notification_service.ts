@@ -10,7 +10,7 @@ class NotificationService {
   public async getListNotificationByUser(
     userId: string
   ): Promise<Array<NotificationInterface>> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }

@@ -1,23 +1,23 @@
-import { DataStoredInToken, IUser, TokenData } from "@modules/auth";
-import { isEmptyObject, Logger } from "@core/utils";
-import { HttpException } from "@core/exception";
-import gravatar from "gravatar";
-import bcryptjs from "bcryptjs";
-import { UserSchema } from "@modules/users";
-import { LoginDto, LoginGoogleDto } from "./auth.dto";
-import { generateJwtToken, randomTokenString } from "@core/utils/helpers";
-import { IRefreshToken, RefreshTokenSchema } from "@modules/refresh_token";
+import { DataStoredInToken, IUser, TokenData } from '@modules/auth';
+import { isEmptyObject, Logger } from '@core/utils';
+import { HttpException } from '@core/exception';
+import gravatar from 'gravatar';
+import bcryptjs from 'bcryptjs';
+import { UserSchema } from '@modules/users';
+import { LoginDto, LoginGoogleDto } from './auth.dto';
+import { generateJwtToken, randomTokenString } from '@core/utils/helpers';
+import { IRefreshToken, RefreshTokenSchema } from '@modules/refresh_token';
 
 class AuthService {
   public userSchema = UserSchema;
 
   public async login(model: LoginDto): Promise<TokenData> {
     if (isEmptyObject(model) === true) {
-      throw new HttpException(400, "Model is empty");
+      throw new HttpException(400, 'Model is empty');
     }
 
     const user = await this.userSchema
-      .findOne({ account_name: model.account_name })
+      .findOne({ account_name: model.account_name, isBlocked: 0 })
       .exec();
     if (!user) {
       throw new HttpException(
@@ -31,7 +31,7 @@ class AuthService {
       user.password
     );
     if (!isMatchPassword) {
-      throw new HttpException(400, "Invalid password");
+      throw new HttpException(400, 'Invalid password');
     }
 
     const refreshToken = await this.generateRefreshToken(user._id);
@@ -45,15 +45,15 @@ class AuthService {
 
   public async loginGoogle(model: LoginGoogleDto): Promise<TokenData> {
     if (isEmptyObject(model) === true) {
-      throw new HttpException(400, "Model is empty");
+      throw new HttpException(400, 'Model is empty');
     }
 
     const user = await this.userSchema.findOne({ email: model.email }).exec();
     if (user) {
       if (user.reg_type != 1) {
-        throw new HttpException(400, "Email already exist");
+        throw new HttpException(400, 'Email already exist');
       }
-      
+
       const refreshToken = await this.generateRefreshToken(user._id);
       await refreshToken.save();
 
@@ -61,13 +61,13 @@ class AuthService {
     }
 
     if (!model.user_type) {
-      throw new HttpException(400, "user_type Empty");
+      throw new HttpException(400, 'user_type Empty');
     }
 
     const avatar = gravatar.url(model.email!, {
-      size: "200",
-      rating: "g",
-      default: "mm",
+      size: '200',
+      rating: 'g',
+      default: 'mm',
     });
 
     const salt = await bcryptjs.genSalt(10);
@@ -103,18 +103,21 @@ class AuthService {
     return generateJwtToken(user, newRefreshToken.token);
   }
 
-  public async revokeToken(token: string): Promise<string>{
+  public async revokeToken(token: string): Promise<string> {
     const refreshToken = await this.getRefreshTokenFromDb(token);
 
     // revoke token and save
     refreshToken.revoked = new Date(Date.now());
     await refreshToken.save();
 
-    return "Success";
+    return 'Success';
   }
 
   public async getCurrentLoginUser(userId: string): Promise<IUser> {
-    const user = await this.userSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -123,7 +126,7 @@ class AuthService {
 
   private async getRefreshTokenFromDb(refreshToken: string) {
     const token = await RefreshTokenSchema.findOne({ token: refreshToken })
-      .populate("user")
+      .populate('user')
       .exec();
     Logger.info(token);
     if (!token || !token.isActive)

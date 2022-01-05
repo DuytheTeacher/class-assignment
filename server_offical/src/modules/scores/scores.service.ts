@@ -22,7 +22,7 @@ class ScoreService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);
@@ -67,7 +67,7 @@ class ScoreService {
     studentId: string,
     classId: string
   ): Promise<Array<ScoreInterface>> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);
@@ -95,7 +95,7 @@ class ScoreService {
     studentId: string,
     classId: string
   ): Promise<number> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);
@@ -134,7 +134,7 @@ class ScoreService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -167,7 +167,7 @@ class ScoreService {
       throw new HttpException(409, `Please upload an excel file!`);
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     const classes = await ClassroomSchema.findById(classId).exec();
     if (!user || !classes) {
       throw new HttpException(404, `User is not exists or Class is not exists`);

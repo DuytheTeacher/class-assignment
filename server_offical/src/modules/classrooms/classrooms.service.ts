@@ -17,7 +17,10 @@ class ClassroomService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -101,6 +104,7 @@ class ClassroomService {
     // const userService = new UserService();
     const listClassroom = <any>await UserSchema.findOne({
       _id: userId,
+      isBlocked: 0,
     })
       .populate('class_list_id')
       .select({
@@ -140,7 +144,10 @@ class ClassroomService {
 
     //user
     // const userService = new UserService();
-    const user = await UserSchema.findById(userId);
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(409, `User is not exist`);
     }
@@ -190,7 +197,7 @@ class ClassroomService {
     if (IsExistInClassroom === true) {
       throw new HttpException(409, `User already exist in classroom`);
     }
-    const user = await UserSchema.findById(userId);
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exist`);
     }
