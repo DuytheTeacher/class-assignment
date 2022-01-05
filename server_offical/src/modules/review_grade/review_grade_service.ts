@@ -20,7 +20,10 @@ class ReviewGradeService {
       throw new HttpException(400, 'Model is empty');
     }
 
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -80,7 +83,7 @@ class ReviewGradeService {
   public async getListReviewByUser(
     userId: string
   ): Promise<Array<ReviewInterface>> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -124,7 +127,7 @@ class ReviewGradeService {
     userId: string,
     reviewId: string
   ): Promise<ReviewInterface> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({ _id: userId, isBlocked: 0 }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
@@ -159,7 +162,10 @@ class ReviewGradeService {
     reviewId: string,
     finalMark: number
   ): Promise<ReviewInterface> {
-    const user = await UserSchema.findById(userId).exec();
+    const user = await UserSchema.findOne({
+      _id: userId,
+      isBlocked: 0,
+    }).exec();
     if (!user) {
       throw new HttpException(404, `User is not exists`);
     }
