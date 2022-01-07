@@ -134,35 +134,19 @@ class GradeStructureService {
 
   public async delete(
     userId: string,
-    model: Array<UpdateGradeStructureInterface>,
+    gradesStructId: string,
     classId: string
-  ): Promise<Array<GradeStructureInterface>> {
-    if (isEmptyObject(model) === true) {
-      throw new HttpException(400, 'Model is empty');
-    }
-
-    let count = 0;
-    let gradesStructures = [];
-    for (let i = 0; i < model.length; i++) {
-      const updateGradeStructure =
-        await this.gradeStructureSchema.findOneAndDelete({
-          _id: model[i]._id,
-          name: model[i].name,
-          auth: userId,
-          classroom: classId,
-        });
-      if (!updateGradeStructure) {
-        count++;
-        continue;
-      }
-      gradesStructures.push(updateGradeStructure);
-    }
-
-    if (count == model.length) {
+  ): Promise<GradeStructureInterface> {
+    const updateGradeStructure =
+      await this.gradeStructureSchema.findOneAndDelete({
+        _id: gradesStructId,
+        auth: userId,
+        classroom: classId,
+      });
+    if (!updateGradeStructure) {
       throw new HttpException(400, `Error when delete`);
     }
-
-    return gradesStructures;
+    return updateGradeStructure;
   }
 }
 

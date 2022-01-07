@@ -68,10 +68,13 @@ export default class GradeStructureController {
     try {
       const userId = req.user.id;
       const classId = req.body.classId;
-      const model: Array<UpdateGradeStructureInterface> =
-        req.body.deleteGradesStructure;
-      const gradestructure: Array<GradeStructureInterface> =
-        await this.gradeStructureService.delete(userId, model, classId);
+      const gradesStructId = req.body.gradesStructId;
+      const gradestructure: GradeStructureInterface =
+        await this.gradeStructureService.delete(
+          userId,
+          gradesStructId,
+          classId
+        );
       const resp = new BodyResponse('Success', gradestructure);
       res.status(200).json(resp);
     } catch (error) {
